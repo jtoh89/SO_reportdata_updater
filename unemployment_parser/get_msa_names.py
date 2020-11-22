@@ -18,7 +18,7 @@ for line in data.text.splitlines():
         row = [x.strip() for x in line.split(delimeter, maxsplit=len(headers) - 1)]
 
         # make sure we only look at MSAs
-        if row[0] not in ['A','D','B']:
+        if row[0] not in ['A','D','B', 'F']:
             continue
 
         if len(row) > series_id_len:
@@ -36,14 +36,32 @@ df = pd.DataFrame(row_list, columns=headers)
 
 for i, row in df.iterrows():
     if row['area_type_code'] == 'A':
+        if row['area_code'][2:4] == '72':
+            df.drop(i, inplace=True)
+            continue
         df.at[i, 'Geo_ID'] = row['area_code'][2:4]
         df.at[i, 'Geo_Type'] = 'States'
+
     elif row['area_type_code'] == 'B':
+        if row['area_code'][2:4] == '72':
+            df.drop(i, inplace=True)
+            continue
         df.at[i, 'Geo_ID'] = row['area_code'][4:9]
         df.at[i, 'Geo_Type'] = 'Metro'
+
     elif row['area_type_code'] == 'D':
+        if row['area_code'][2:4] == '72':
+            df.drop(i, inplace=True)
+            continue
         df.at[i, 'Geo_ID'] = row['area_code'][4:9]
         df.at[i, 'Geo_Type'] = 'Micro'
+
+    elif row['area_type_code'] == 'F':
+        if row['area_code'][2:4] == '72':
+            df.drop(i, inplace=True)
+            continue
+        df.at[i, 'Geo_ID'] = row['area_code'][2:7]
+        df.at[i, 'Geo_Type'] = 'County'
 
 
 sql = sql_caller.SqlCaller(create_tables=True)

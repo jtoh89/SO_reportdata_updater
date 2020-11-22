@@ -7,7 +7,7 @@ import datetime
 from db_layer import sql_caller
 import requests as r
 
-sql = sql_caller.SqlCaller()
+sql = sql_caller.SqlCaller(create_tables=True)
 zillow_msa_lookup = sql.db_get_Zillow_MSAID_Lookup()
 
 path = os.path.dirname(os.path.abspath(__file__))
@@ -25,11 +25,13 @@ for filename in os.listdir(path):
 
             common = pd.merge(df, zillow_msa_lookup, how='left', left_on=['RegionID'], right_on=['Zillow_Id'])
 
-            common['PriceChange'] = (common[current_month] - common[last_updated_month_esri]) / common[last_updated_month_esri]
+            common['MSA_PriceChange'] = (common[current_month] - common[last_updated_month_esri]) / common[last_updated_month_esri]
 
-            common = common[['Geo_ID','PriceChange']].rename(columns={'Geo_ID':'MSAID'})
+            common = common[['Geo_ID','MSA_PriceChange']].rename(columns={'Geo_ID':'MSAID'})
 
             common.to_csv('msa_homevalues.csv')
+
+            sql.db_dump_MSA_HomeValue_Multiplier(common)
 
     if 'County_' in filename:
         with open(os.path.join(path, filename)) as file:
@@ -40,11 +42,14 @@ for filename in os.listdir(path):
 
             df['COUNTYID'] = df['StateCodeFIPS'].apply(lambda x: str(x).zfill(2)) + df['MunicipalCodeFIPS'].apply(lambda x: str(x).zfill(3))
 
-            df['PriceChange'] = (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
+            df['COUNTY_PriceChange'] = (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
 
-            df = df[['COUNTYID','PriceChange']]
+            df = df[['COUNTYID','COUNTY_PriceChange']]
 
             df.to_csv('county_homevalues.csv')
+
+            sql.db_dump_County_HomeValue_Multiplier(df)
+
 
     if 'Zip_' in filename:
         with open(os.path.join(path, filename)) as file:
@@ -53,8 +58,8 @@ for filename in os.listdir(path):
 
             df = df[['RegionName',last_updated_month_esri,current_month]].rename(columns={'RegionName':'ZIP'})
 
-            df['PriceChange'] = (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
+            df['ZIP_PriceChange'] = (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
 
-            df = df[['ZIP','PriceChange']]
+            df = df[['ZIP','ZIP_PriceChange']]
 
             df.to_csv('zip_homevalues.csv')

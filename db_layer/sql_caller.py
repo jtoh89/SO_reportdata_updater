@@ -34,23 +34,50 @@ class SqlCaller():
             models.InitiateDeclaratives.create_tables(engine_string)
 
 
+    def db_dump_BLS_Geo_names(self, df):
+        df.to_sql("BLS_Geo_Info", if_exists='replace', con=self.engine, index=False)
+
+
+
+    def db_dump_BLS_unemployment(self, df):
+        df.to_sql("BLS_Unemployment", if_exists='replace', con=self.engine, index=False)
+
+    def db_get_BLS_msa_unemployment(self):
+        df = pd.read_sql_query("select Geo_ID, UnemploymentRate from BLS_Unemployment where Geo_Type != 'County'", self.engine)
+
+        return df
+
+    def db_get_BLS_all_unemployment(self):
+        df = pd.read_sql_query("select Geo_ID, UnemploymentRate, Geo_Type from BLS_Unemployment", self.engine)
+
+        return df
+
+    def db_get_ESRI_unemployment_data(self):
+        df = pd.read_sql_query("""select Geo_ID, Geo_Type, Unemployment_multiplier from ESRI_Unemployment_Multiplier 
+                                    where Geo_Type in ('US.CBSA','US.States')""", self.engine)
+        return df
+
+    def db_dump_ESRI_Unemployment_Multiplier(self, df):
+            df.to_sql("ESRI_Unemployment_Multiplier", if_exists='replace', con=self.engine, index=False)
+
+
+
+
     def db_get_Zillow_MSAID_Lookup(self):
         msa_ids = pd.read_sql_query("""select Geo_ID, Zillow_Id from Zillow_MSAID_Lookup""", self.engine)
         return msa_ids
 
-    def db_dump_BLS_Geo_names(self, df):
-        df.to_sql("BLS_Geo_Info", if_exists='replace', con=self.engine, index=False)
+    def db_dump_Zillow_MSAID_Lookup(self, df):
+        df.to_sql("Zillow_MSAID_Lookup", if_exists='replace', con=self.engine, index=False)
 
-    def db_dump_BLS_Macro_data(self, df):
-        df.to_sql("BLS_Macrodata", if_exists='replace', con=self.engine, index=False)
+    def db_dump_ZIP_Adjustment_Multiplier(self, df):
+        df.to_sql("ZIP_Adjustment_Multiplier", if_exists='replace', con=self.engine, index=False)
 
-    def db_get_BLS_data(self):
-        df = pd.read_sql_query("select Geo_ID, UnemploymentRate from BLS_Macrodata", self.engine)
+    def db_dump_County_HomeValue_Multiplier(self, df):
+        df.to_sql("County_HomeValue_Multiplier", if_exists='replace', con=self.engine, index=False)
 
-        return df
-
-    def db_dump_ESRI_unemployment_data(self, df):
-        df.to_sql("ESRI_Unemployment_Multiplier", if_exists='replace', con=self.engine, index=False)
+    def db_dump_MSA_HomeValue_Multiplier(self, df):
+        df.to_sql("MSA_HomeValue_Multiplier", if_exists='replace', con=self.engine, index=False)
 
 
     def db_dump_Zipcode_to_County_MSA(self, df):
