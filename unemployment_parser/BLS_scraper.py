@@ -78,6 +78,16 @@ for k,v in urls.items():
     else:
         final_df = final_df.append(df)
 
+MSA_to_CBSA_conversion = {
+        '70750':'12620','70900':'12700','71050':'12740','71350':'13540','71500':'13620','71650':'14460','71950':'14860','72400':'15540','72700':'18180',
+        '19380':'19430','73450':'25540','73750':'28300','73900':'29060','74350':'30100','74650':'30340','74950':'31700','75700':'35300','76450':'35980',
+        '36860':'36837','76600':'38340','76750':'38860','39140':'39150','77200':'39300','77650':'40860','78100':'44140','78400':'45860','78500':'47240',
+        '11680':'49060','79600':'49340'}
+
+for k,v in MSA_to_CBSA_conversion.items():
+    if k in list(final_df['Geo_ID']):
+        final_df.loc[final_df['Geo_ID'] == k, 'Geo_ID'] = v
+
 # Get list of MSA and State Ids to make sure there is no update we miss
 geo_names_df = pd.read_excel('Geo names.xlsx',converters={'Geo_ID':str}).drop(columns=['Unnamed: 0', 'area_type_code', 'area_code', 'display_level', 'selectable', 'sort_sequence'])
 

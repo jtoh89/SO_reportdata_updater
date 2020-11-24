@@ -62,13 +62,13 @@ class SqlCaller():
 
 
 
+    def db_dump_Zillow_MSAID_Lookup(self, df):
+        df.to_sql("Zillow_MSAID_Lookup", if_exists='replace', con=self.engine, index=False)
 
     def db_get_Zillow_MSAID_Lookup(self):
         msa_ids = pd.read_sql_query("""select Geo_ID, Zillow_Id from Zillow_MSAID_Lookup""", self.engine)
         return msa_ids
 
-    def db_dump_Zillow_MSAID_Lookup(self, df):
-        df.to_sql("Zillow_MSAID_Lookup", if_exists='replace', con=self.engine, index=False)
 
     def db_dump_ZIP_Adjustment_Multiplier(self, df):
         df.to_sql("ZIP_Adjustment_Multiplier", if_exists='replace', con=self.engine, index=False)

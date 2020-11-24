@@ -32,16 +32,6 @@ data = data.rename(columns={'StdGeographyLevel':'Geo_Type', 'StdGeographyID': 'G
 
 macro_df = data
 
-# Some ESRI Geoids are not same as BLS IDs. Convert ESRI to BLS so we can join on BLS data
-Esri_to_NECTAID_conversion = {
-'12620':'70750','12700':'70900','12740':'71050','13540':'71350','13620':'71500','14460':'71650','14860':'71950','15540':'72400','18180':'72700','19430':'19380','25540':'73450',
-'28300':'73750','29060':'73900','30100':'74350','30340':'74650','31700':'74950','35300':'75700','35980':'76450','36837':'36860','38340':'76600','38860':'76750','39150':'39140',
-'39300':'77200','40860':'77650','44140':'78100','45860':'78400','47240':'78500','49060':'11680','49340':'79600'
-}
-
-for k,v in Esri_to_NECTAID_conversion.items():
-    macro_df['Geo_ID'] = macro_df['Geo_ID'].apply(lambda x: x.replace(k, v))
-
 # Set USA ID to 999
 macro_df.loc[macro_df['Geo_Type'] == 'US.WholeUSA', 'Geo_ID'] = '99999'
 
@@ -57,7 +47,7 @@ match = pd.merge(bls_unemployment_data, macro_df, on='Geo_ID').rename(columns={'
 arcgisids_not_in_BLS = macro_df[(~macro_df.Geo_ID.isin(match.Geo_ID))]
 for i, row in arcgisids_not_in_BLS.iterrows():
     if row['Geo_ID'] not in ['12300','24180','27530','33380','34350','39100','40530','42500','46420']:
-        arcgisids_not_in_BLS.to_excel('misc/arcgis_missing_mlsids.xlsx')
+        arcgisids_not_in_BLS.to_excel('arcgis_missing_mlsids.xlsx')
         sys.exit()
 
 
