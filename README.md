@@ -21,7 +21,7 @@ Unemployment Update Directions:
 3. Run ESRI_msa_multiplier_unemployment.py
 
 
-HomeValues Update Directions:
+ZIP Update Directions:
 1. Update Zillow files if needed
 2. Run zillow_homevalue_parser.py
-3. Run import_homvalues.py
+3. Run run_zipcode_adjuster.py

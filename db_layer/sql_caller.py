@@ -34,7 +34,7 @@ class SqlCaller():
             models.InitiateDeclaratives.create_tables(engine_string)
 
 
-    def db_dump_BLS_Geo_names(self, df):
+    def db_dump_BLS_Geo_Info(self, df):
         df.to_sql("BLS_Geo_Info", if_exists='replace', con=self.engine, index=False)
 
 
@@ -52,14 +52,25 @@ class SqlCaller():
 
         return df
 
+
+    def db_dump_ESRI_Unemployment_Multiplier(self, df):
+            df.to_sql("ESRI_Unemployment_Multiplier", if_exists='replace', con=self.engine, index=False)
+
     def db_get_ESRI_unemployment_data(self):
         df = pd.read_sql_query("""select Geo_ID, Geo_Type, Unemployment_multiplier from ESRI_Unemployment_Multiplier 
                                     where Geo_Type in ('US.CBSA','US.States')""", self.engine)
         return df
 
-    def db_dump_ESRI_Unemployment_Multiplier(self, df):
-            df.to_sql("ESRI_Unemployment_Multiplier", if_exists='replace', con=self.engine, index=False)
 
+
+    def db_dump_Zipcode_to_County_MSA(self, df):
+        df.to_sql("Zipcode_to_County_MSA", if_exists='replace', con=self.engine, index=False)
+
+
+    def db_get_Zipcode_to_County_MSA(self):
+        df = pd.read_sql_query("select * from Zipcode_to_County_MSA", self.engine)
+
+        return df
 
 
     def db_dump_Zillow_MSAID_Lookup(self, df):
@@ -68,6 +79,7 @@ class SqlCaller():
     def db_get_Zillow_MSAID_Lookup(self):
         msa_ids = pd.read_sql_query("""select Geo_ID, Zillow_Id from Zillow_MSAID_Lookup""", self.engine)
         return msa_ids
+
 
 
     def db_dump_ZIP_Adjustment_Multiplier(self, df):
@@ -79,12 +91,3 @@ class SqlCaller():
     def db_dump_MSA_HomeValue_Multiplier(self, df):
         df.to_sql("MSA_HomeValue_Multiplier", if_exists='replace', con=self.engine, index=False)
 
-
-    def db_dump_Zipcode_to_County_MSA(self, df):
-        df.to_sql("Zipcode_to_County_MSA", if_exists='replace', con=self.engine, index=False)
-
-
-    def db_get_Zipcode_to_County_MSA(self):
-        df = pd.read_sql_query("select * from Zipcode_to_County_MSA", self.engine)
-
-        return df

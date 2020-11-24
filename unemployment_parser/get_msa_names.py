@@ -75,6 +75,6 @@ for k,v in MSA_to_CBSA_conversion.items():
 
 
 sql = sql_caller.SqlCaller(create_tables=True)
-sql.db_dump_BLS_Geo_names(df[['Geo_ID', 'area_code', 'Geo_Type', 'area_text']].rename(columns={'area_text':'Geo_Name'}))
+sql.db_dump_BLS_Geo_Info(df[['Geo_ID', 'area_code', 'Geo_Type', 'area_text']].rename(columns={'area_text': 'Geo_Name'}))
 
 df.to_excel('Geo names.xlsx')
