@@ -7,6 +7,11 @@ import datetime
 from db_layer import sql_caller
 import requests as r
 
+
+
+## This script will store MSA and County Home Value Price Change
+
+
 sql = sql_caller.SqlCaller(create_tables=True)
 zillow_msa_lookup = sql.db_get_Zillow_MSAID_Lookup()
 
@@ -31,7 +36,7 @@ for filename in os.listdir(path):
 
             common.to_csv('msa_homevalues.csv')
 
-            sql.db_dump_MSA_HomeValue_Multiplier(common)
+            sql.db_dump_HomeValue_PriceChange_MSA(common)
 
     if 'County_' in filename:
         with open(os.path.join(path, filename)) as file:
@@ -48,7 +53,7 @@ for filename in os.listdir(path):
 
             df.to_csv('county_homevalues.csv')
 
-            sql.db_dump_County_HomeValue_Multiplier(df)
+            sql.db_dump_HomeValue_PriceChange_County(df)
 
 
     if 'Zip_' in filename:

@@ -57,14 +57,14 @@ class ZIP_Adjustment_Multiplier(Base):
 
 
 
-class MSA_HomeValue_Multiplier(Base):
-    __tablename__ = "MSA_HomeValue_Multiplier"
+class HomeValue_PriceChange_MSA(Base):
+    __tablename__ = "HomeValue_PriceChange_MSA"
 
     MSAID = Column(String(5), unique=False, primary_key=True)
     MSA_PriceChange = Column(Float, unique=False)
 
-class County_HomeValue_Multiplier(Base):
-    __tablename__ = "County_HomeValue_Multiplier"
+class HomeValue_PriceChange_County(Base):
+    __tablename__ = "HomeValue_PriceChange_County"
 
     COUNTYID = Column(String(5), unique=False, primary_key=True)
     COUNTY_PriceChange = Column(Float, unique=False)

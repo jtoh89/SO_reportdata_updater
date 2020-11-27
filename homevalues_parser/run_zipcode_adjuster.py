@@ -62,10 +62,10 @@ final_df = pd.merge(final_df, msa_unemployment_lookup, how='left', left_on=['MSA
 final_df['National_UnemploymentRate'] = national_unemployment_lookup['National_UnemploymentRate'].iloc[0]
 
 
-
 unemployment_multiplier = sql.db_get_ESRI_unemployment_data()
 unemployment_msa_multiplier = unemployment_multiplier[unemployment_multiplier['Geo_Type'] == 'US.CBSA'].rename(columns={'Unemployment_multiplier':'Metro_unemployment_multiplier'})
 unemployment_state_multiplier = unemployment_multiplier[unemployment_multiplier['Geo_Type'] == 'US.States'].rename(columns={'Unemployment_multiplier':'State_unemployment_multiplier'})
+
 
 final_df = pd.merge(final_df, unemployment_msa_multiplier, how='left', left_on=['MSAID'], right_on=['Geo_ID']).drop(columns=['Geo_ID','Geo_Type'])
 final_df = pd.merge(final_df, unemployment_state_multiplier, how='left', left_on=['STATEID'], right_on=['Geo_ID']).drop(columns=['Geo_ID','Geo_Type'])

@@ -9,9 +9,10 @@ import sys
 
 urls = {
     'micro':'https://download.bls.gov/pub/time.series/la/la.data.62.Micro',
-        'metro':'https://download.bls.gov/pub/time.series/la/la.data.60.Metro',
-        'county': 'https://download.bls.gov/pub/time.series/la/la.data.64.County',
-        'states':'https://download.bls.gov/pub/time.series/la/la.data.2.AllStatesU'}
+    'metro':'https://download.bls.gov/pub/time.series/la/la.data.60.Metro',
+    'county': 'https://download.bls.gov/pub/time.series/la/la.data.64.County',
+    'states':'https://download.bls.gov/pub/time.series/la/la.data.2.AllStatesU'
+}
 
 
 # DEFINE CURRENT MONTH AND YEAR TO PULL. SET US UNEMPLOYMENT RATE

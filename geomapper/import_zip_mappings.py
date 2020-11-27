@@ -3,6 +3,7 @@ import pandas as pd
 from db_layer import sql_caller
 
 ###
+# This script will Zipcode to County to MSA Ids
 # Download zipcode files from https://www.huduser.gov/portal/datasets/usps_crosswalk.html
 ##
 
@@ -32,14 +33,6 @@ common['STATEID'] = common['COUNTYID'].str[:2]
 
 sql = sql_caller.SqlCaller(create_tables=True)
 sql.db_dump_Zipcode_to_County_MSA(common)
-
-
-
-
-
-
-
-
 
 
 

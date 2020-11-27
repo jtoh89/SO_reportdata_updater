@@ -4,6 +4,8 @@ from sqlalchemy import create_engine
 from db_layer import sql_caller
 
 
+## This script will store Zillow to CBSAID Mapping into Zillow_MSAID_Lookup
+
 
 
 df = pd.read_excel('BLS_Zillow_Geo.xlsx')

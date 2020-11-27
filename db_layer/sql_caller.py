@@ -85,9 +85,9 @@ class SqlCaller():
     def db_dump_ZIP_Adjustment_Multiplier(self, df):
         df.to_sql("ZIP_Adjustment_Multiplier", if_exists='replace', con=self.engine, index=False)
 
-    def db_dump_County_HomeValue_Multiplier(self, df):
-        df.to_sql("County_HomeValue_Multiplier", if_exists='replace', con=self.engine, index=False)
+    def db_dump_HomeValue_PriceChange_MSA(self, df):
+        df.to_sql("HomeValue_PriceChange_MSA", if_exists='replace', con=self.engine, index=False)
 
-    def db_dump_MSA_HomeValue_Multiplier(self, df):
-        df.to_sql("MSA_HomeValue_Multiplier", if_exists='replace', con=self.engine, index=False)
+    def db_dump_HomeValue_PriceChange_County(self, df):
+        df.to_sql("HomeValue_PriceChange_County", if_exists='replace', con=self.engine, index=False)
 
