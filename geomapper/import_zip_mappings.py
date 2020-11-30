@@ -20,6 +20,19 @@ with open(path + '/ZIP_CBSA.csv') as file:
     cbsa_df = pd.read_csv(file, dtype=str).rename(columns={'CBSA':'MSAID'})
 
 
+zip_notin_cbsa = cbsa_df[cbsa_df['MSAID'] == '99999']['ZIP']
+dupe_zip = []
+for zip in zip_notin_cbsa:
+    if len(cbsa_df[cbsa_df['ZIP'] == zip]) > 1:
+        dupe_zip.append(zip)
+    else:
+        continue
+
+for i, row in cbsa_df.iterrows():
+    if row['ZIP'] in dupe_zip and row['MSAID'] == '99999':
+        cbsa_df.drop(i, inplace=True)
+
+
 cbsa_df = cbsa_df[~cbsa_df.ZIP.isin(removed_county_df.ZIP)]
 
 common = pd.merge(cbsa_df, county_df, how='inner', left_on=['ZIP'], right_on=['ZIP'])

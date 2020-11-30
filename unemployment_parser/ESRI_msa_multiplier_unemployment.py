@@ -27,12 +27,15 @@ data = enrich(study_areas=[{"sourceCountry":"US","layer":"US.States","ids":[
               comparison_levels=['US.CBSA','US.WholeUSA'],
               return_geometry=False)
 
+data.to_excel('esri_unemployment_raw.xlsx')
+
 data = data.drop(columns=['ID', 'apportionmentConfidence', 'OBJECTID','aggregationMethod','populationToPolygonSizeRating', 'HasData', 'sourceCountry'])
 data = data.rename(columns={'StdGeographyLevel':'Geo_Type', 'StdGeographyID': 'Geo_ID','StdGeographyName':'Geo_Name','UNEMPRT_CY': 'UnemploymentRate'})
 
+
 macro_df = data
 
-# Set USA ID to 999
+# Set USA ID to 99999
 macro_df.loc[macro_df['Geo_Type'] == 'US.WholeUSA', 'Geo_ID'] = '99999'
 
 
