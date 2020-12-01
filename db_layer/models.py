@@ -38,8 +38,8 @@ class ESRI_Unemployment_Multiplier(Base):
     UnemploymentRate_ESRI = Column(Float, unique=False)
     Unemployment_multiplier = Column(Float, unique=False)
 
-class ZIP_Adjustment_Multiplier(Base):
-    __tablename__ = "ZIP_Adjustment_Multiplier"
+class ZIP_MacroData_Update(Base):
+    __tablename__ = "ZIP_MacroData_Update"
 
     ZIP = Column(String(5), unique=False, primary_key=True)
     MSAID = Column(String(5), unique=False)
@@ -79,12 +79,13 @@ class Zillow_MSAID_Lookup(Base):
     MSA_Name = Column(String(50), unique=False)
 
 
-class Zipcode_to_County_MSA(Base):
-    __tablename__ = "Zipcode_to_County_MSA"
+class Zipcode_to_CountyMSAState(Base):
+    __tablename__ = "Zipcode_to_CountyMSAState"
 
     ZIP = Column(String(5), unique=False, primary_key=True)
     COUNTYID = Column(String(5), unique=False)
     MSAID = Column(String(5), unique=False)
+    STATEID = Column(String(2), unique=False)
 
 
 class MSA_to_CountyState(Base):

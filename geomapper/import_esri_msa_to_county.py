@@ -29,29 +29,29 @@ with open(path + '/Core_Based_Statistical_Areas.csv') as file:
 msa_count = len(msa_df)
 
 msa_df = msa_df[~msa_df['GEOID'].isin(msa_countystate['MSAID'].drop_duplicates())]
+msa_df = msa_df[~msa_df['GEOID'].isin(['17620','17640','10380','11640','49500','25020','27580','32420','38660','41900','41980','42180'])]
 
 print('Out of {} MSAs, {} are remaining'.format(msa_count, len(msa_df)))
-
-gis = GIS('https://www.arcgis.com', 'Tammy_Mason_LearnArcGIS', 'tooToo123!@#')
-
 
 msa_to_county_df = pd.DataFrame(columns=['ID','MSAID', 'AreaID', 'STATEID'])
 
 t1 = time.time()
 count = 1
-for msaid in msa_df['GEOID']:
+gis = GIS('https://www.arcgis.com', 'Tammy_Mason_LearnArcGIS', 'tooToo123!@#')
+for i,row in msa_df.iterrows():
     print('Query {}'.format(count))
 
-    geoarea = standard_geography_query(source_country='US', ids=[msaid], layers=["US.CBSA"],
+    geoarea = standard_geography_query(source_country='US', ids=[row['GEOID']], layers=["US.CBSA"],
                                        return_sub_geography=True,
                                        sub_geography_layer="US.Counties", generalization_level=6,
                                        return_geometry=False)
 
     if geoarea.empty:
+        print('Skipped: {}'.format(row['NAMELSAD']))
         continue
 
     geoarea['STATEID'] = geoarea['AreaID'].str[:2]
-    geoarea['MSAID'] = msaid
+    geoarea['MSAID'] = row['GEOID']
     geoarea['ID'] = geoarea['MSAID'] + geoarea['AreaID']
 
     msa_to_county_df = msa_to_county_df.append(geoarea[['ID','MSAID', 'AreaID', 'STATEID']])

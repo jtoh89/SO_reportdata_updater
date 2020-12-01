@@ -38,8 +38,8 @@ for filename in os.listdir(path):
 #   STEP 2
 #   Get all USPS zipcodes mapped to the County and MSA (CBSA) IDs
 
-sql = sql_caller.SqlCaller()
-zip_msa_county_lookup = sql.db_get_Zipcode_to_County_MSA()
+sql = sql_caller.SqlCaller(create_tables=True)
+zip_msa_county_lookup = sql.db_get_Zipcode_to_CountyMSAState()
 
 
 #   STEP 3
@@ -77,9 +77,7 @@ final_df = pd.merge(final_df, unemployment_state_multiplier, how='left', left_on
 
 #   STEP 6
 #   Dump data into db
-sql.db_dump_ZIP_Adjustment_Multiplier(final_df)
-
-
+sql.db_dump_ZIP_MacroData_Update(final_df)
 
 
 

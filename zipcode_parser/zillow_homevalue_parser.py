@@ -30,7 +30,7 @@ for filename in os.listdir(path):
 
             common = pd.merge(df, zillow_msa_lookup, how='left', left_on=['RegionID'], right_on=['Zillow_Id'])
 
-            common['MSA_PriceChange'] = (common[current_month] - common[last_updated_month_esri]) / common[last_updated_month_esri]
+            common['MSA_PriceChange'] = 1 + (common[current_month] - common[last_updated_month_esri]) / common[last_updated_month_esri]
 
             common = common[['Geo_ID','MSA_PriceChange']].rename(columns={'Geo_ID':'MSAID'})
 
@@ -47,7 +47,7 @@ for filename in os.listdir(path):
 
             df['COUNTYID'] = df['StateCodeFIPS'].apply(lambda x: str(x).zfill(2)) + df['MunicipalCodeFIPS'].apply(lambda x: str(x).zfill(3))
 
-            df['COUNTY_PriceChange'] = (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
+            df['COUNTY_PriceChange'] = 1 + (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
 
             df = df[['COUNTYID','COUNTY_PriceChange']]
 
@@ -63,7 +63,7 @@ for filename in os.listdir(path):
 
             df = df[['RegionName',last_updated_month_esri,current_month]].rename(columns={'RegionName':'ZIP'})
 
-            df['ZIP_PriceChange'] = (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
+            df['ZIP_PriceChange'] = 1 + (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
 
             df = df[['ZIP','ZIP_PriceChange']]
 
