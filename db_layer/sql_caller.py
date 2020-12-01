@@ -34,10 +34,6 @@ class SqlCaller():
             models.InitiateDeclaratives.create_tables(engine_string)
 
 
-    def db_dump_BLS_Geo_Info(self, df):
-        df.to_sql("BLS_Geo_Info", if_exists='replace', con=self.engine, index=False)
-
-
 
     def db_dump_BLS_unemployment(self, df):
         df.to_sql("BLS_Unemployment", if_exists='replace', con=self.engine, index=False)
@@ -73,14 +69,6 @@ class SqlCaller():
         return df
 
 
-    def db_dump_Zillow_MSAID_Lookup(self, df):
-        df.to_sql("Zillow_MSAID_Lookup", if_exists='replace', con=self.engine, index=False)
-
-    def db_get_Zillow_MSAID_Lookup(self):
-        msa_ids = pd.read_sql_query("""select Geo_ID, Zillow_Id from Zillow_MSAID_Lookup""", self.engine)
-        return msa_ids
-
-
 
     def db_dump_ZIP_Adjustment_Multiplier(self, df):
         df.to_sql("ZIP_Adjustment_Multiplier", if_exists='replace', con=self.engine, index=False)
@@ -90,4 +78,27 @@ class SqlCaller():
 
     def db_dump_HomeValue_PriceChange_County(self, df):
         df.to_sql("HomeValue_PriceChange_County", if_exists='replace', con=self.engine, index=False)
+
+
+
+    def db_dump_MSA_to_CountyState(self, df):
+        df.to_sql("MSA_to_CountyState", if_exists='append', con=self.engine, index=False)
+
+    def db_get_MSA_to_CountyState(self):
+        msa_ids = pd.read_sql_query("""select * from MSA_to_CountyState""", self.engine)
+        return msa_ids
+
+
+    def db_dump_Zillow_MSAID_Lookup(self, df):
+        df.to_sql("Zillow_MSAID_Lookup", if_exists='replace', con=self.engine, index=False)
+
+    def db_get_Zillow_MSAID_Lookup(self):
+        msa_ids = pd.read_sql_query("""select Geo_ID, Zillow_Id from Zillow_MSAID_Lookup""", self.engine)
+        return msa_ids
+
+    def db_dump_BLS_Geo_Info(self, df):
+        df.to_sql("BLS_Geo_Info", if_exists='replace', con=self.engine, index=False)
+
+
+
 

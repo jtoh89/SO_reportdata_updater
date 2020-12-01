@@ -87,6 +87,14 @@ class Zipcode_to_County_MSA(Base):
     MSAID = Column(String(5), unique=False)
 
 
+class MSA_to_CountyState(Base):
+    __tablename__ = "MSA_to_CountyState"
+
+    ID = Column(String(10), unique=False, primary_key=True)
+    MSAID = Column(String(5), unique=False)
+    COUNTYID = Column(String(5), unique=False)
+    STATEID = Column(String(2), unique=False)
+
 
 class InitiateDeclaratives():
     @staticmethod
