@@ -38,7 +38,7 @@ cbsa_df = cbsa_df[~cbsa_df.ZIP.isin(puertorico_df.ZIP)]
 
 
 sql = sql_caller.SqlCaller(create_tables=False)
-msa_countystate = sql.db_get_MSA_to_CountyState()
+msa_countystate = sql.db_get_GeoMapping_MSA_to_CountyState()
 county_test = pd.merge(county_df, msa_countystate[['MSAID','COUNTYID']], how='left', left_on=['COUNTYID'], right_on=['COUNTYID'])
 
 
@@ -54,7 +54,7 @@ common['STATEID'] = common['COUNTYID'].str[:2]
 common['MSAID'] = common['MSAID'].fillna('')
 
 sql = sql_caller.SqlCaller(create_tables=True)
-sql.db_dump_Zipcode_to_CountyMSAState(common)
+sql.db_dump_GeoMapping_Zipcode_to_CountyMSAState(common)
 
 
 

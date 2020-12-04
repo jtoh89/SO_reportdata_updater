@@ -60,34 +60,33 @@ class SqlCaller():
 
 
 
-    def db_dump_Zipcode_to_CountyMSAState(self, df):
-        df.to_sql("Zipcode_to_CountyMSAState", if_exists='replace', con=self.engine, index=False)
-
-
-    def db_get_Zipcode_to_CountyMSAState(self):
-        df = pd.read_sql_query("select * from Zipcode_to_CountyMSAState", self.engine)
-
-        return df
-
-
 
     def db_dump_ZIP_MacroData_Update(self, df):
         df.to_sql("ZIP_MacroData_Update", if_exists='replace', con=self.engine, index=False)
 
-    def db_dump_HomeValue_PriceChange_MSA(self, df):
-        df.to_sql("HomeValue_PriceChange_MSA", if_exists='replace', con=self.engine, index=False)
-
-    def db_dump_HomeValue_PriceChange_County(self, df):
-        df.to_sql("HomeValue_PriceChange_County", if_exists='replace', con=self.engine, index=False)
 
 
+    def db_dump_HomeValue_PriceChange(self, df):
+        df.to_sql("HomeValue_PriceChange", if_exists='replace', con=self.engine, index=False)
 
-    def db_dump_MSA_to_CountyState(self, df):
-        df.to_sql("MSA_to_CountyState", if_exists='append', con=self.engine, index=False)
 
-    def db_get_MSA_to_CountyState(self):
-        msa_ids = pd.read_sql_query("""select * from MSA_to_CountyState""", self.engine)
+
+    def db_dump_GeoMapping_MSA_to_CountyState(self, df):
+        df.to_sql("GeoMapping_MSA_to_CountyState", if_exists='append', con=self.engine, index=False)
+
+    def db_get_GeoMapping_MSA_to_CountyState(self):
+        msa_ids = pd.read_sql_query("""select * from GeoMapping_MSA_to_CountyState""", self.engine)
         return msa_ids
+
+
+    def db_dump_GeoMapping_Zipcode_to_CountyMSAState(self, df):
+        df.to_sql("GeoMapping_Zipcode_to_CountyMSAState", if_exists='replace', con=self.engine, index=False)
+
+
+    def db_get_GeoMapping_Zipcode_to_CountyMSAState(self):
+        df = pd.read_sql_query("select * from GeoMapping_Zipcode_to_CountyMSAState", self.engine)
+
+        return df
 
 
 
@@ -98,10 +97,6 @@ class SqlCaller():
         msa_ids = pd.read_sql_query("""select Geo_ID, Zillow_Id from Zillow_MSAID_Lookup""", self.engine)
         return msa_ids
 
-
-
-    def db_dump_BLS_Geo_Info(self, df):
-        df.to_sql("BLS_Geo_Info", if_exists='replace', con=self.engine, index=False)
 
 
 

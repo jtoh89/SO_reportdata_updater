@@ -19,6 +19,8 @@ path = os.path.dirname(os.path.abspath(__file__))
 
 last_updated_month_esri = '2020-07-31'
 
+final_df = pd.DataFrame()
+
 for filename in os.listdir(path):
     if 'Metro_' in filename:
         with open(os.path.join(path, filename)) as file:
@@ -30,13 +32,22 @@ for filename in os.listdir(path):
 
             common = pd.merge(df, zillow_msa_lookup, how='left', left_on=['RegionID'], right_on=['Zillow_Id'])
 
-            common['MSA_PriceChange'] = 1 + (common[current_month] - common[last_updated_month_esri]) / common[last_updated_month_esri]
+            common['PriceChange'] = 1 + (common[current_month] - common[last_updated_month_esri]) / common[last_updated_month_esri]
 
-            common = common[['Geo_ID','MSA_PriceChange']].rename(columns={'Geo_ID':'MSAID'})
+            common = common[['Geo_ID','PriceChange']]
+            common['Geo_Type'] = 'MSA'
 
-            common.to_csv('msa_homevalues.csv')
+            common.loc[common['Geo_ID'] == '99999', 'Geo_Type'] = 'National'
 
-            sql.db_dump_HomeValue_PriceChange_MSA(common)
+
+            common.rename(columns={'PriceChange':'MSA_PriceChange'}).to_csv('msa_homevalues.csv')
+
+            if final_df.empty:
+                final_df = common
+            else:
+                final_df = final_df.append(common)
+
+
 
     if 'County_' in filename:
         with open(os.path.join(path, filename)) as file:
@@ -45,15 +56,19 @@ for filename in os.listdir(path):
 
             df = df[['State', 'StateCodeFIPS', 'MunicipalCodeFIPS', 'RegionName', current_month, last_updated_month_esri]]
 
-            df['COUNTYID'] = df['StateCodeFIPS'].apply(lambda x: str(x).zfill(2)) + df['MunicipalCodeFIPS'].apply(lambda x: str(x).zfill(3))
+            df['Geo_ID'] = df['StateCodeFIPS'].apply(lambda x: str(x).zfill(2)) + df['MunicipalCodeFIPS'].apply(lambda x: str(x).zfill(3))
 
-            df['COUNTY_PriceChange'] = 1 + (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
+            df['PriceChange'] = 1 + (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
 
-            df = df[['COUNTYID','COUNTY_PriceChange']]
+            df = df[['Geo_ID','PriceChange']]
+            df['Geo_Type'] = 'Counties'
 
-            df.to_csv('county_homevalues.csv')
+            df.rename(columns={'PriceChange':'COUNTY_PriceChange'}).to_csv('county_homevalues.csv')
 
-            sql.db_dump_HomeValue_PriceChange_County(df)
+            if final_df.empty:
+                final_df = df
+            else:
+                final_df = final_df.append(df)
 
 
     if 'Zip_' in filename:
@@ -61,10 +76,20 @@ for filename in os.listdir(path):
             df = pd.read_csv(file)
             current_month = df.columns[-1]
 
-            df = df[['RegionName',last_updated_month_esri,current_month]].rename(columns={'RegionName':'ZIP'})
+            df = df[['RegionName',last_updated_month_esri,current_month]].rename(columns={'RegionName':'Geo_ID'})
 
-            df['ZIP_PriceChange'] = 1 + (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
+            df['PriceChange'] = 1 + (df[current_month] - df[last_updated_month_esri]) / df[last_updated_month_esri]
 
-            df = df[['ZIP','ZIP_PriceChange']]
+            df = df[['Geo_ID','PriceChange']]
+            df['Geo_Type'] = 'ZIP'
 
-            df.to_csv('zip_homevalues.csv')
+            df.rename(columns={'PriceChange':'ZIP_PriceChange'}).to_csv('zip_homevalues.csv')
+
+            if final_df.empty:
+                final_df = df
+            else:
+                final_df = final_df.append(df)
+
+
+
+sql.db_dump_HomeValue_PriceChange(final_df)

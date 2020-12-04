@@ -20,16 +20,15 @@ from db_layer import sql_caller
 
 
 sql = sql_caller.SqlCaller(create_tables=False)
-msa_countystate = sql.db_get_MSA_to_CountyState()
+msa_countystate = sql.db_get_GeoMapping_MSA_to_CountyState()
 
 path = os.path.dirname(os.path.abspath(__file__))
 with open(path + '/Core_Based_Statistical_Areas.csv') as file:
     msa_df = pd.read_csv(file, dtype=str)
 
-msa_count = len(msa_df)
-
-msa_df = msa_df[~msa_df['GEOID'].isin(msa_countystate['MSAID'].drop_duplicates())]
 msa_df = msa_df[~msa_df['GEOID'].isin(['17620','17640','10380','11640','49500','25020','27580','32420','38660','41900','41980','42180'])]
+msa_count = len(msa_df)
+msa_df = msa_df[~msa_df['GEOID'].isin(msa_countystate['MSAID'].drop_duplicates())]
 
 print('Out of {} MSAs, {} are remaining'.format(msa_count, len(msa_df)))
 
@@ -64,4 +63,4 @@ for i,row in msa_df.iterrows():
 t2 = time.time()
 print('Run took {}'.format(t2-t1))
 
-sql.db_dump_MSA_to_CountyState(msa_to_county_df.rename(columns={'AreaID':'COUNTYID'}))
+sql.db_dump_GeoMapping_MSA_to_CountyState(msa_to_county_df.rename(columns={'AreaID': 'COUNTYID'}))

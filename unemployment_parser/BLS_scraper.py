@@ -10,7 +10,7 @@ import sys
 urls = {
     'micro':'https://download.bls.gov/pub/time.series/la/la.data.62.Micro',
     'metro':'https://download.bls.gov/pub/time.series/la/la.data.60.Metro',
-    'county': 'https://download.bls.gov/pub/time.series/la/la.data.64.County',
+    'counties': 'https://download.bls.gov/pub/time.series/la/la.data.64.County',
     'states':'https://download.bls.gov/pub/time.series/la/la.data.2.AllStatesU'
 }
 
@@ -60,12 +60,12 @@ for k,v in urls.items():
             df.at[i, 'Geo_ID'] = row['series_id'][5:7]
             df.at[i, 'Geo_Type'] = 'States'
 
-        elif k == 'county':
+        elif k == 'counties':
             if row['series_id'][5:7] == '72':
                 df.drop(i, inplace=True)
                 continue
             df.at[i, 'Geo_ID'] = row['series_id'][5:10]
-            df.at[i, 'Geo_Type'] = 'County'
+            df.at[i, 'Geo_Type'] = 'Counties'
 
         elif k == 'metro' or k == 'micro':
             if row['series_id'][5:7] == '72':

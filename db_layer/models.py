@@ -7,15 +7,6 @@ Base = declarative_base()
 
 
 #   Macro Data
-class BLS_Geo_Info(Base):
-    __tablename__ = "BLS_Geo_Info"
-    Geo_ID = Column(String(10), unique=False, primary_key=True)
-    area_code = Column(String(100), unique=False)
-    Geo_Name = Column(String(100), unique=False)
-    Geo_Type = Column(String(50), unique=False)
-
-
-#   Macro Data
 class BLS_Unemployment(Base):
     __tablename__ = "BLS_Unemployment"
 
@@ -49,26 +40,21 @@ class ZIP_MacroData_Update(Base):
     MSA_PriceChange = Column(Float, unique=False)
     COUNTY_PriceChange = Column(Float, unique=False)
     USA_PriceChange = Column(Float, unique=False)
-    County_UnemploymentRate = Column(Float, unique=False)
-    Msa_UnemploymentRate = Column(Float, unique=False)
-    National_UnemploymentRate = Column(Float, unique=False)
-    Metro_unemployment_multiplier = Column(Float, unique=False)
-    State_Unemployment_multiplier = Column(Float, unique=False)
+    COUNTY_UnemploymentRate = Column(Float, unique=False)
+    MSA_UnemploymentRate = Column(Float, unique=False)
+    USA_UnemploymentRate = Column(Float, unique=False)
+    MSA_Unemployment_adjustment = Column(Float, unique=False)
+    STATE_Unemployment_adjustment = Column(Float, unique=False)
 
 
 
-class HomeValue_PriceChange_MSA(Base):
-    __tablename__ = "HomeValue_PriceChange_MSA"
+class HomeValue_PriceChange(Base):
+    __tablename__ = "HomeValue_PriceChange"
 
-    MSAID = Column(String(5), unique=False, primary_key=True)
-    MSA_PriceChange = Column(Float, unique=False)
-
-class HomeValue_PriceChange_County(Base):
-    __tablename__ = "HomeValue_PriceChange_County"
-
-    COUNTYID = Column(String(5), unique=False, primary_key=True)
-    COUNTY_PriceChange = Column(Float, unique=False)
-
+    Geo_ID = Column(String(5), unique=False, primary_key=True)
+    Geo_Type = Column(String(50), unique=False)
+    PriceChange = Column(Float, unique=False)
+#
 
 class Zillow_MSAID_Lookup(Base):
     __tablename__ = "Zillow_MSAID_Lookup"
@@ -79,8 +65,8 @@ class Zillow_MSAID_Lookup(Base):
     MSA_Name = Column(String(50), unique=False)
 
 
-class Zipcode_to_CountyMSAState(Base):
-    __tablename__ = "Zipcode_to_CountyMSAState"
+class GeoMapping_Zipcode_to_CountyMSAState(Base):
+    __tablename__ = "GeoMapping_Zipcode_to_CountyMSAState"
 
     ZIP = Column(String(5), unique=False, primary_key=True)
     COUNTYID = Column(String(5), unique=False)
@@ -88,8 +74,8 @@ class Zipcode_to_CountyMSAState(Base):
     STATEID = Column(String(2), unique=False)
 
 
-class MSA_to_CountyState(Base):
-    __tablename__ = "MSA_to_CountyState"
+class GeoMapping_MSA_to_CountyState(Base):
+    __tablename__ = "GeoMapping_MSA_to_CountyState"
 
     ID = Column(String(10), unique=False, primary_key=True)
     MSAID = Column(String(5), unique=False)
