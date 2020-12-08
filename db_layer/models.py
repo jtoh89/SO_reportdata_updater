@@ -18,16 +18,18 @@ class BLS_Unemployment(Base):
     UnemploymentRate = Column(Float, unique=False)
 
 
+
 #   ESRI unemployment Data
-class ESRI_Unemployment_Multiplier(Base):
-    __tablename__ = "ESRI_Unemployment_Multiplier"
+class ESRI_Unemployment_Adjustments(Base):
+    __tablename__ = "ESRI_Unemployment_Adjustments"
 
     Geo_ID = Column(String(10), unique=False, primary_key=True)
     Geo_Name = Column(String(50), unique=False)
     Geo_Type = Column(String(50), unique=False)
     UnemploymentRate_BLS = Column(Float, unique=False)
     UnemploymentRate_ESRI = Column(Float, unique=False)
-    Unemployment_multiplier = Column(Float, unique=False)
+    Unemployment_Adjustment = Column(Float, unique=False)
+
 
 class ZIP_MacroData_Update(Base):
     __tablename__ = "ZIP_MacroData_Update"
@@ -37,14 +39,15 @@ class ZIP_MacroData_Update(Base):
     COUNTYID = Column(String(5), unique=False)
     STATEID = Column(String(2), unique=False)
     ZIP_PriceChange = Column(Float, unique=False)
-    MSA_PriceChange = Column(Float, unique=False)
     COUNTY_PriceChange = Column(Float, unique=False)
+    MSA_PriceChange = Column(Float, unique=False)
     USA_PriceChange = Column(Float, unique=False)
     COUNTY_UnemploymentRate = Column(Float, unique=False)
     MSA_UnemploymentRate = Column(Float, unique=False)
     USA_UnemploymentRate = Column(Float, unique=False)
-    MSA_Unemployment_adjustment = Column(Float, unique=False)
-    STATE_Unemployment_adjustment = Column(Float, unique=False)
+    MSA_Unemployment_Adjustment = Column(Float, unique=False)
+    STATE_Unemployment_Adjustment = Column(Float, unique=False)
+    County_Unemployment_Adjustment = Column(Float, unique=False)
 
 
 

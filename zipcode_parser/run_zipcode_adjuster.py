@@ -67,17 +67,19 @@ final_df['USA_UnemploymentRate'] = national_unemployment_lookup['USA_Unemploymen
 
 #   STEP 5
 #   Get unemployment adjustment values for zipcode and census tract
-unemployment_multiplier = sql.db_get_ESRI_unemployment_data()
-unemployment_msa_multiplier = unemployment_multiplier[unemployment_multiplier['Geo_Type'] == 'US.CBSA'].rename(columns={'Unemployment_multiplier':'MSA_Unemployment_adjustment'})
-unemployment_state_multiplier = unemployment_multiplier[unemployment_multiplier['Geo_Type'] == 'US.States'].rename(columns={'Unemployment_multiplier':'STATE_Unemployment_adjustment'})
+# unemployment_multiplier = sql.db_get_ESRI_unemployment_data()
+unemployment_multiplier = sql.db_get_ESRI_unemployment_adjustment_data()
+unemployment_msa_multiplier = unemployment_multiplier[unemployment_multiplier['Geo_Type'] == 'US.CBSA'].rename(columns={'Unemployment_Adjustment':'MSA_Unemployment_Adjustment'})
+unemployment_county_multiplier = unemployment_multiplier[unemployment_multiplier['Geo_Type'] == 'US.Counties'].rename(columns={'Unemployment_Adjustment':'COUNTY_Unemployment_Adjustment'})
+unemployment_state_multiplier = unemployment_multiplier[unemployment_multiplier['Geo_Type'] == 'US.States'].rename(columns={'Unemployment_Adjustment':'STATE_Unemployment_Adjustment'})
 
 final_df = pd.merge(final_df, unemployment_msa_multiplier, how='left', left_on=['MSAID'], right_on=['Geo_ID']).drop(columns=['Geo_ID','Geo_Type'])
+final_df = pd.merge(final_df, unemployment_county_multiplier, how='left', left_on=['COUNTYID'], right_on=['Geo_ID']).drop(columns=['Geo_ID','Geo_Type'])
 final_df = pd.merge(final_df, unemployment_state_multiplier, how='left', left_on=['STATEID'], right_on=['Geo_ID']).drop(columns=['Geo_ID','Geo_Type'])
 
 
 #   STEP 6
 #   Dump data into db
 sql.db_dump_ZIP_MacroData_Update(final_df)
-
 
 

@@ -39,7 +39,12 @@ class SqlCaller():
         df.to_sql("BLS_Unemployment", if_exists='replace', con=self.engine, index=False)
 
     def db_get_BLS_msa_unemployment(self):
-        df = pd.read_sql_query("select Geo_ID, UnemploymentRate from BLS_Unemployment where Geo_Type != 'County'", self.engine)
+        df = pd.read_sql_query("select Geo_ID, UnemploymentRate from BLS_Unemployment where Geo_Type != 'Counties'", self.engine)
+
+        return df
+
+    def db_get_BLS_county_unemployment(self):
+        df = pd.read_sql_query("select Geo_ID, UnemploymentRate from BLS_Unemployment where Geo_Type = 'Counties'", self.engine)
 
         return df
 
@@ -49,17 +54,12 @@ class SqlCaller():
         return df
 
 
+    def db_dump_ESRI_Unemployment_Adjustments(self, df):
+        df.to_sql("ESRI_Unemployment_Adjustments", if_exists='replace', con=self.engine, index=False)
 
-    def db_dump_ESRI_Unemployment_Multiplier(self, df):
-            df.to_sql("ESRI_Unemployment_Multiplier", if_exists='replace', con=self.engine, index=False)
-
-    def db_get_ESRI_unemployment_data(self):
-        df = pd.read_sql_query("""select Geo_ID, Geo_Type, Unemployment_multiplier from ESRI_Unemployment_Multiplier 
-                                    where Geo_Type in ('US.CBSA','US.States')""", self.engine)
+    def db_get_ESRI_unemployment_adjustment_data(self):
+        df = pd.read_sql_query("""select Geo_ID, Geo_Type, Unemployment_Adjustment from ESRI_Unemployment_Adjustments""", self.engine)
         return df
-
-
-
 
     def db_dump_ZIP_MacroData_Update(self, df):
         df.to_sql("ZIP_MacroData_Update", if_exists='replace', con=self.engine, index=False)
