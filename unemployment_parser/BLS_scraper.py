@@ -19,8 +19,8 @@ urls = {
 final_df = pd.DataFrame()
 delimeter = '\t'
 current_year = '2020'
-current_month = 'M09'
-US_UNEMPLOYMENT = 7.9
+current_month = 'M10'
+US_UNEMPLOYMENT = 6.9
 #https://fred.stlouisfed.org/series/UNRATE
 
 # Parse Data
@@ -98,6 +98,8 @@ no_match_from_geo_names_df = geo_names_df[~geo_names_df.Geo_ID.isin(common.Geo_I
 
 
 # Make sure every MSA/State is accounted for in data pull
+# no_match_from_final_df should be empty
+# no_match_from_geo_names_df should have 02201, 02232, 02280
 if not no_match_from_final_df.empty:
     print('!!! Mismatch in Geo names !!!', no_match_from_final_df)
 if not no_match_from_geo_names_df.empty:

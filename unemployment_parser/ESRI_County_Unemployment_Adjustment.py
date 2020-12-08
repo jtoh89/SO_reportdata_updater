@@ -51,7 +51,7 @@ county_unemployment_df['Geo_ID'] = county_unemployment_df['Geo_ID'].apply(lambda
 
 
 # Get BLS Data and join on ESRI data
-sql = sql_caller.SqlCaller(create_tables=True)
+sql = sql_caller.SqlCaller(create_tables=False)
 bls_unemployment_data = sql.db_get_BLS_county_unemployment()
 bls_unemployment_data['UnemploymentRate'] = bls_unemployment_data['UnemploymentRate'].astype(float)
 match = pd.merge(bls_unemployment_data, county_unemployment_df, how='left', left_on=['Geo_ID'], right_on=['Geo_ID']).rename(columns={'UnemploymentRate_x': 'UnemploymentRate_ESRI', 'UnemploymentRate_y': 'UnemploymentRate_BLS'})

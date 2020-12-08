@@ -12,7 +12,7 @@ import requests as r
 ## This script will store MSA and County Home Value Price Change
 
 
-sql = sql_caller.SqlCaller(create_tables=True)
+sql = sql_caller.SqlCaller(create_tables=False)
 zillow_msa_lookup = sql.db_get_Zillow_MSAID_Lookup()
 
 path = os.path.dirname(os.path.abspath(__file__))
