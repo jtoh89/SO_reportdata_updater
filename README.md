@@ -25,6 +25,7 @@ Unemployment Update Directions:
 2. Run BLS_scraper.py
 3. ESRI_Msa_Unemployment_Adjustment.py
 4. Run ESRI_County_Unemployment_Adjustment.py
+5. Run Store_All_Unemployment_Adjustments.py
 
 ZIP Update Directions:
 1. Update Zillow files if needed
