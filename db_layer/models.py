@@ -1,6 +1,5 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Table, MetaData, create_engine, Column, Integer, String, Float, BigInteger, Date
-import datetime
 
 Base = declarative_base()
 
@@ -81,7 +80,8 @@ class GeoMapping_MSA_to_CountyState(Base):
 class BACKUP_BLS_Unemployment(Base):
     __tablename__ = "BACKUP_BLS_Unemployment"
 
-    Geo_ID = Column(String(10), unique=False, primary_key=True)
+    ID = Column(Integer, unique=False, primary_key=True, autoincrement=True)
+    Geo_ID = Column(String(5), unique=False)
     Geo_Name = Column(String(150), unique=False)
     Geo_Type = Column(String(50), unique=False)
     Year = Column(Integer, unique=False)
@@ -92,7 +92,8 @@ class BACKUP_BLS_Unemployment(Base):
 class BACKUP_ESRI_Unemployment_Adjustments(Base):
     __tablename__ = "BACKUP_ESRI_Unemployment_Adjustments"
 
-    Geo_ID = Column(String(10), unique=False, primary_key=True)
+    ID = Column(Integer, unique=False, primary_key=True, autoincrement=True)
+    Geo_ID = Column(String(5), unique=False)
     Geo_Name = Column(String(150), unique=False)
     Geo_Type = Column(String(50), unique=False)
     UnemploymentRate_BLS = Column(Float, unique=False)
@@ -104,7 +105,8 @@ class BACKUP_ESRI_Unemployment_Adjustments(Base):
 class BACKUP_ZIP_MacroData_Update(Base):
     __tablename__ = "BACKUP_ZIP_MacroData_Update"
 
-    ZIP = Column(String(5), unique=False, primary_key=True)
+    ID = Column(Integer, unique=False, primary_key=True, autoincrement=True)
+    ZIP = Column(String(5), unique=False)
     MSAID = Column(String(5), unique=False)
     COUNTYID = Column(String(5), unique=False)
     STATEID = Column(String(2), unique=False)
@@ -123,7 +125,8 @@ class BACKUP_ZIP_MacroData_Update(Base):
 class BACKUP_HomeValue_PriceChange(Base):
     __tablename__ = "BACKUP_HomeValue_PriceChange"
 
-    Geo_ID = Column(String(5), unique=False, primary_key=True)
+    ID = Column(Integer, unique=False, primary_key=True, autoincrement=True)
+    Geo_ID = Column(String(5), unique=False)
     Geo_Type = Column(String(50), unique=False)
     PriceChange = Column(Float, unique=False)
     Backup_Date = Column(Date, unique=False)
