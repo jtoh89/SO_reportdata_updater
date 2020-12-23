@@ -48,7 +48,6 @@ for filename in os.listdir(path):
                 final_df = final_df.append(common)
 
 
-
     if 'County_' in filename:
         with open(os.path.join(path, filename)) as file:
             df = pd.read_csv(file)

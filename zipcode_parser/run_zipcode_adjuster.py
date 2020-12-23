@@ -6,9 +6,7 @@ from arcgis.geoenrichment import enrich
 import datetime
 from db_layer import sql_caller
 import requests as r
-
-
-
+import sys
 
 
 path = os.path.dirname(os.path.abspath(__file__))
@@ -16,8 +14,6 @@ path = os.path.dirname(os.path.abspath(__file__))
 
 #   STEP 1
 #   Get home values for each zipcode, msa, and county
-
-
 for filename in os.listdir(path):
     if 'zip_homevalues' in filename:
         zip_df = pd.read_csv('zip_homevalues.csv')
@@ -37,14 +33,12 @@ for filename in os.listdir(path):
 
 #   STEP 2
 #   Get all USPS zipcodes mapped to the County and MSA (CBSA) IDs
-
 sql = sql_caller.SqlCaller(create_tables=True)
 zip_msa_county_lookup = sql.db_get_GeoMapping_Zipcode_to_CountyMSAState()
 
 
 #   STEP 3
 #   Join Zipcode mapping to msa, county, and zipcode home values. Use left join to keep all zipcodes
-
 final_df = pd.merge(zip_msa_county_lookup, zip_df.drop(columns=['Geo_ID','Geo_Type']), how='left', left_on=['ZIP'], right_on=['ZIP'])
 final_df = pd.merge(final_df, msa_df.drop(columns=['Geo_ID','Geo_Type']), how='left', left_on=['MSAID'], right_on=['MSAID'])
 final_df = pd.merge(final_df, county_df.drop(columns=['Geo_ID','Geo_Type']), how='left', left_on=['COUNTYID'], right_on=['COUNTYID'])
@@ -53,7 +47,6 @@ final_df['USA_PriceChange'] = us_multiplier
 
 #   STEP 4
 #   Get unemployment for county, msa, and usa. Join on IDs
-
 unemployment = sql.db_get_BLS_all_unemployment()
 
 county_unemployment_lookup = unemployment[unemployment['Geo_Type'] == 'Counties'].rename(columns={'UnemploymentRate':'COUNTY_UnemploymentRate'})
@@ -78,7 +71,18 @@ final_df = pd.merge(final_df, unemployment_county_multiplier, how='left', left_o
 final_df = pd.merge(final_df, unemployment_state_multiplier, how='left', left_on=['STATEID'], right_on=['Geo_ID']).drop(columns=['Geo_ID','Geo_Type'])
 
 
+
 #   STEP 6
+#   Make sure state, us data are not null
+state_check = final_df[['ZIP','STATE_Unemployment_Adjustment']].drop_duplicates().isnull().values.any()
+usa_price_check = final_df[['ZIP','USA_PriceChange']].drop_duplicates().isnull().values.any()
+usa_ue_check = final_df[['ZIP','USA_UnemploymentRate']].drop_duplicates().isnull().values.any()
+
+if state_check or usa_price_check or usa_ue_check:
+    print('!!! WARNING - there are missing state or national data')
+    sys.exit()
+
+#   STEP 7
 #   Dump data into db
 sql.db_dump_ZIP_MacroData_Update(final_df)
 

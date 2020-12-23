@@ -77,6 +77,7 @@ class SqlCaller():
 
 
 
+
     def db_dump_ZIP_MacroData_Update(self, df):
         df.to_sql("ZIP_MacroData_Update", if_exists='replace', con=self.engine, index=False)
         print('Successfully stored ZIP_MacroData_Update')

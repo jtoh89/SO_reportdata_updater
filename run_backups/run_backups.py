@@ -27,7 +27,6 @@ if len(dates) == 4:
         var = conn.execute(delete_sql)
 
 BACKUP_BLS_Unemployment['Backup_Date'] = today
-# BACKUP_BLS_Unemployment['ID'] = (BACKUP_BLS_Unemployment['Backup_Date'].astype(str) + BACKUP_BLS_Unemployment['Geo_ID']).apply(lambda x: x.replace('-',''))
 sql.db_dump_BACKUP_BLS_Unemployment(BACKUP_BLS_Unemployment)
 
 
@@ -46,7 +45,6 @@ if len(dates) == 4:
         var = conn.execute(delete_sql)
 
 BACKUP_ESRI_Unemployment_Adjustments['Backup_Date'] = today
-# BACKUP_ESRI_Unemployment_Adjustments['ID'] = (BACKUP_ESRI_Unemployment_Adjustments['Backup_Date'].astype(str) + BACKUP_ESRI_Unemployment_Adjustments['Geo_ID']).apply(lambda x: x.replace('-',''))
 sql.db_dump_BACKUP_ESRI_Unemployment_Adjustments(BACKUP_ESRI_Unemployment_Adjustments)
 
 
@@ -66,8 +64,6 @@ if len(dates) == 4:
 
 
 BACKUP_ZIP_MacroData_Update['Backup_Date'] = today
-# BACKUP_ZIP_MacroData_Update['ID'] = (BACKUP_ZIP_MacroData_Update['Backup_Date'].astype(str) + BACKUP_ZIP_MacroData_Update['ZIP'] +
-#                                      BACKUP_ZIP_MacroData_Update['MSAID'] + BACKUP_ZIP_MacroData_Update['COUNTYID']).apply(lambda x: x.replace('-',''))
 sql.db_dump_BACKUP_ZIP_MacroData_Update(BACKUP_ZIP_MacroData_Update)
 
 
@@ -88,6 +84,5 @@ if len(dates) == 4:
 
 
 BACKUP_HomeValue_PriceChange['Backup_Date'] = today
-# BACKUP_HomeValue_PriceChange['ID'] = (BACKUP_HomeValue_PriceChange['Backup_Date'].astype(str) + BACKUP_HomeValue_PriceChange['Geo_ID']).apply(lambda x: str(x).replace('-',''))
 sql.db_dump_BACKUP_HomeValue_PriceChange(BACKUP_HomeValue_PriceChange)
 
