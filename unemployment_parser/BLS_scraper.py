@@ -96,18 +96,16 @@ common = final_df.merge(geo_names_df, on=['Geo_ID', 'Geo_ID'])
 no_match_from_final_df = final_df[~final_df.Geo_ID.isin(common.Geo_ID)]
 no_match_from_geo_names_df = geo_names_df[~geo_names_df.Geo_ID.isin(common.Geo_ID)]
 
-
 # Make sure every MSA/State is accounted for in data pull
 # no_match_from_final_df should be empty
 # no_match_from_geo_names_df should have 02201, 02232, 02280
 if not no_match_from_final_df.empty:
-    print('!!! Mismatch in Geo names !!!', no_match_from_final_df)
-if not no_match_from_geo_names_df.empty:
-    print('!!! Mismatch in Geo names !!!', no_match_from_geo_names_df)
+    print('!!! ERROR - There are Geo IDs in the current BLS data that are not found in the Geo names.xlsx file', no_match_from_final_df)
+if not no_match_from_geo_names_df.empty and (~no_match_from_geo_names_df.Geo_ID.isin(['02201','02232','02280'])).any():
+    print('!!! ERROR - There are Geo IDs in the Geo names.xlsx missing in the current BLS data', no_match_from_geo_names_df)
 
 macrodata = pd.merge(geo_names_df, final_df, on='Geo_ID')
 macrodata = macrodata.rename(columns={'area_text':'Geo_Name','year':'Year','period':'Month','value':'UnemploymentRate'}).drop(columns=['series_id','footnote_codes','Geo_Type_y']).rename(columns={'Geo_Type_x':'Geo_Type'})
-
 
 macrodata = macrodata.append({'Geo_ID':'99999',
                               'Geo_Name':'United States',
@@ -116,8 +114,22 @@ macrodata = macrodata.append({'Geo_ID':'99999',
                               'Month':current_month,
                               'UnemploymentRate':US_UNEMPLOYMENT}, ignore_index=True)
 
+if macrodata['UnemploymentRate'].isnull().values.any():
+    print('!!! ERROR - There are missing unemployment rate values in the current BLS data')
+    sys.exit()
 
-sql = sql_caller.SqlCaller(create_tables=True)
+sql = sql_caller.SqlCaller(create_tables=False)
+
+check_data = sql.db_select_BLS_unemployment()
+common = pd.merge(check_data, macrodata, how='inner', left_on=['Geo_ID'], right_on=['Geo_ID'])
+no_match_from_check_data = check_data[~check_data.Geo_ID.isin(common.Geo_ID)]
+no_match_from_macrodata = macrodata[~macrodata.Geo_ID.isin(common.Geo_ID)]
+
+if len(no_match_from_check_data) > 0 or len(no_match_from_macrodata) > 0:
+    print('!!! ERROR - There are missing Geo IDs in the current BLS data')
+    sys.exit()
+
+
 sql.db_dump_BLS_unemployment(macrodata[['Geo_ID', 'Geo_Name', 'Year', 'Month', 'Geo_Type', 'UnemploymentRate']])
 
 # macrodata.to_csv('misc/bls_data.csv')

@@ -33,7 +33,7 @@ for filename in os.listdir(path):
 
 #   STEP 2
 #   Get all USPS zipcodes mapped to the County and MSA (CBSA) IDs
-sql = sql_caller.SqlCaller(create_tables=True)
+sql = sql_caller.SqlCaller(create_tables=False)
 zip_msa_county_lookup = sql.db_get_GeoMapping_Zipcode_to_CountyMSAState()
 
 

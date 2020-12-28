@@ -53,7 +53,7 @@ if len(cbsa_missing) > 0 or len(county_missing) > 0:
 common['STATEID'] = common['COUNTYID'].str[:2]
 common['MSAID'] = common['MSAID'].fillna('')
 
-sql = sql_caller.SqlCaller(create_tables=True)
+sql = sql_caller.SqlCaller(create_tables=False)
 sql.db_dump_GeoMapping_Zipcode_to_CountyMSAState(common)
 
 

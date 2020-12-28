@@ -5,7 +5,7 @@ from db_layer import sql_caller
 import json
 from datetime import date, timedelta
 
-sql = sql_caller.SqlCaller(create_tables=True)
+sql = sql_caller.SqlCaller(create_tables=False)
 
 with open("../un_pw.json", "r") as file:
     aws_string = json.load(file)['aws_mysql']

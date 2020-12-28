@@ -34,6 +34,10 @@ class SqlCaller():
             models.InitiateDeclaratives.create_tables(engine_string)
 
 
+    def db_select_BLS_unemployment(self):
+        df = pd.read_sql_query("select Geo_ID, UnemploymentRate from BLS_Unemployment", self.engine)
+
+        return df
 
     def db_dump_BLS_unemployment(self, df):
         df.to_sql("BLS_Unemployment", if_exists='replace', con=self.engine, index=False)

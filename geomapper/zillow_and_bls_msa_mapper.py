@@ -6,8 +6,6 @@ from db_layer import sql_caller
 
 ## This script will store Zillow to CBSAID Mapping into Zillow_MSAID_Lookup
 
-
-
 df = pd.read_excel('BLS_Zillow_Geo.xlsx')
 
 df = df[df['Missing Metro?'] != 'Yes'].drop(columns=['State 1','State 2','Missing Metro?'])\
@@ -21,11 +19,9 @@ df[['Geo_Id','Zillow_Id']] = df[['Geo_Id','Zillow_Id']].apply(lambda x: x.astype
 df = df.append({'Geo_Id': '99999',
            'Zillow_Id': '102001',
            'Zillow_MSA_Name': 'United States',
-            'MSA_Name':'United States'
-           }, ignore_index=True)
+            'MSA_Name':'United States'}, ignore_index=True)
 
 
-sql = sql_caller.SqlCaller(create_tables=True)
+sql = sql_caller.SqlCaller(create_tables=False)
 sql.db_dump_Zillow_MSAID_Lookup(df)
-
 

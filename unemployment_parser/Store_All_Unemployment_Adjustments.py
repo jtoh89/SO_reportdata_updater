@@ -27,7 +27,7 @@ for i, row in MSA_Unemployment.iterrows():
 Unemployment_data = County_unemployment_df.append(MSA_Unemployment)
 
 
-sql = sql_caller.SqlCaller(create_tables=True)
+sql = sql_caller.SqlCaller(create_tables=False)
 sql.db_dump_ESRI_Unemployment_Adjustments(Unemployment_data)
 
 
