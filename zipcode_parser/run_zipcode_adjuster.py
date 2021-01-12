@@ -86,4 +86,7 @@ if state_check or usa_price_check or usa_ue_check:
 #   Dump data into db
 sql.db_dump_ZIP_MacroData_Update(final_df)
 
+sql = sql_caller.SqlCaller(create_tables=False, use_prod=True)
+sql.db_dump_PROD_ZIP_MacroData_Update(final_df)
+
 

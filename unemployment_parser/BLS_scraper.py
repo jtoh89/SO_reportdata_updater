@@ -19,8 +19,8 @@ urls = {
 final_df = pd.DataFrame()
 delimeter = '\t'
 current_year = '2020'
-current_month = 'M10'
-US_UNEMPLOYMENT = 6.9
+current_month = 'M11'
+US_UNEMPLOYMENT = 6.7
 #https://fred.stlouisfed.org/series/UNRATE
 
 # Parse Data

@@ -13,25 +13,32 @@ class SqlCaller():
     api_key: define api_key for census data. You can go to www.census.gov.
     """
 
-    def __init__(self, create_tables=False):
-        connectagain = False
-        try:
-            with open("./un_pw.json", "r") as file:
-                mysql_engine = json.load(file)['aws_mysql']
-        except:
-            connectagain = True
-
-        if connectagain:
+    def __init__(self, create_tables=False, use_prod=False):
+        if use_prod:
             with open("../un_pw.json", "r") as file:
-                mysql_engine = json.load(file)['aws_mysql']
+                mysql_engine = json.load(file)['prod_mysql']
+
+            engine_string = mysql_engine
+            self.engine = create_engine(engine_string)
+        else:
+            connectagain = False
+            try:
+                with open("./un_pw.json", "r") as file:
+                    mysql_engine = json.load(file)['aws_mysql']
+            except:
+                connectagain = True
+
+            if connectagain:
+                with open("../un_pw.json", "r") as file:
+                    mysql_engine = json.load(file)['aws_mysql']
 
 
-        engine_string = mysql_engine
-        self.engine = create_engine(engine_string)
+            engine_string = mysql_engine
+            self.engine = create_engine(engine_string)
 
-        if create_tables == True:
-            print("Creating tables")
-            models.InitiateDeclaratives.create_tables(engine_string)
+            if create_tables == True:
+                print("Creating tables")
+                models.InitiateDeclaratives.create_tables(engine_string)
 
 
     def db_select_BLS_unemployment(self):
@@ -66,7 +73,6 @@ class SqlCaller():
         return df
 
 
-
     def db_dump_ESRI_Unemployment_Adjustments(self, df):
         df.to_sql("ESRI_Unemployment_Adjustments", if_exists='replace', con=self.engine, index=False)
         print('Successfully stored ESRI_Unemployment_Adjustments')
@@ -81,6 +87,9 @@ class SqlCaller():
 
 
 
+    def db_dump_PROD_ZIP_MacroData_Update(self, df):
+        df.to_sql("zip_macrodata_update", if_exists='replace', con=self.engine, index=False)
+        print('Successfully stored PRODUCTION ZIP_MacroData_Update')
 
     def db_dump_ZIP_MacroData_Update(self, df):
         df.to_sql("ZIP_MacroData_Update", if_exists='replace', con=self.engine, index=False)
