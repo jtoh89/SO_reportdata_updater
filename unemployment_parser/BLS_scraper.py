@@ -129,6 +129,9 @@ if len(no_match_from_check_data) > 0 or len(no_match_from_macrodata) > 0:
     print('!!! ERROR - There are missing Geo IDs in the current BLS data')
     sys.exit()
 
+if macrodata['UnemploymentRate'].isnull().values.any():
+    print('!!! ERROR - There are null values')
+    sys.exit()
 
 sql.db_dump_BLS_unemployment(macrodata[['Geo_ID', 'Geo_Name', 'Year', 'Month', 'Geo_Type', 'UnemploymentRate']])
 
