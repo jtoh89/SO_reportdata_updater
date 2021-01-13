@@ -131,7 +131,13 @@ class BACKUP_HomeValue_PriceChange(Base):
     PriceChange = Column(Float, unique=False)
     Backup_Date = Column(Date, unique=False)
 
+class TEST_ZIP_IMPORT(Base):
+    __tablename__ = "TEST_ZIP_IMPORT"
 
+    Geo_ID = Column(String(5), unique=False, primary_key=True)
+    Geo_Type = Column(String(5), unique=False)
+    Geo_Name = Column(String(150), unique=False)
+    MedianHomeValue = Column(Integer, unique=False)
 
 
 

@@ -17,17 +17,14 @@ path = os.path.dirname(os.path.abspath(__file__))
 for filename in os.listdir(path):
     if 'zip_homevalues' in filename:
         zip_df = pd.read_csv('zip_homevalues.csv')
-        zip_df = zip_df.drop(columns=['Unnamed: 0'])
         zip_df['ZIP'] = zip_df['Geo_ID'].apply(lambda x: str(x).zfill(5))
     elif 'msa_homevalues' in filename:
         msa_df = pd.read_csv('msa_homevalues.csv')
-        msa_df = msa_df.drop(columns=['Unnamed: 0']).fillna(0)
         msa_df['MSAID'] = msa_df['Geo_ID'].apply(lambda x: str(int(x)).zfill(5))
         us_multiplier = msa_df[msa_df.MSAID == '99999']['MSA_PriceChange'][0]
         msa_df = msa_df[msa_df.MSAID != '99999']
     elif 'county_homevalues' in filename:
         county_df = pd.read_csv('county_homevalues.csv')
-        county_df = county_df.drop(columns=['Unnamed: 0'])
         county_df['COUNTYID'] = county_df['Geo_ID'].apply(lambda x: str(x).zfill(5))
 
 

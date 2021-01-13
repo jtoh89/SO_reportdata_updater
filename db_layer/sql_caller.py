@@ -143,3 +143,7 @@ class SqlCaller():
 
 
 
+
+    def db_dump_TEST_ZIP_IMPORT(self, df):
+        df.to_sql("TEST_ZIP_IMPORT", if_exists='append', con=self.engine, index=False)
+

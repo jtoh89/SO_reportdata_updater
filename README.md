@@ -25,6 +25,12 @@ Unemployment Update Directions:
 
 
 ZIP Update Directions:
+ONLY NEEDED WHEN ESRI UPDATES
+    Delete all Zips from ZIP_Skiplist.csv
+    Run import_msa_homevalues.py
+    Run import_county_homevalues.py
+    Run import_zip_homevalues.py
+
 1. Update Zillow files if needed
 2. Run zillow_homevalue_parser.py
 3. Run run_zipcode_adjuster.py
