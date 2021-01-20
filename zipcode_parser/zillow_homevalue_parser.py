@@ -111,11 +111,18 @@ for filename in os.listdir(path):
             df = df[['Geo_ID','PriceChange',current_month]]
 
             df = pd.merge(df, esri_zip_df[['Geo_ID','MedianHomeValue']], how='left', left_on=['Geo_ID'], right_on=['Geo_ID'])
-            df['Better_PriceChange'] = df[current_month] / df['MedianHomeValue'] * .98
+            # df['Better_PriceChange'] = df[current_month] / df['MedianHomeValue'] * .98
+            df['Better_PriceChange'] = df[current_month] / df['MedianHomeValue']
 
             for i, row in df.iterrows():
                 if row['Better_PriceChange'] > 0:
-                    df.at[i, 'PriceChange'] = row['Better_PriceChange']
+                    if row['Better_PriceChange'] < row['PriceChange']:
+                        continue
+
+                    if row['Better_PriceChange'] >= 1.1:
+                        df.at[i, 'PriceChange'] = row['Better_PriceChange'] * 1.03
+                    else:
+                        df.at[i, 'PriceChange'] = row['Better_PriceChange'] * .99
 
             df['Geo_Type'] = 'ZIP'
 

@@ -23,6 +23,9 @@ Unemployment Update Directions:
 4. Run ESRI_County_Unemployment_Adjustment.py
 5. Run Store_All_Unemployment_Adjustments.py
 
+Update Census Tract Data
+1. Run import_mortgage_data.py
+
 
 ZIP Update Directions:
 ONLY NEEDED WHEN ESRI UPDATES

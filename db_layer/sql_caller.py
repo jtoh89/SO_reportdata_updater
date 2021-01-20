@@ -113,6 +113,19 @@ class SqlCaller():
 
 
 
+    def db_dump_HUD_CensusTractsData(self, df):
+        df.to_sql("HUD_CensusTractsData", if_exists='replace', con=self.engine, index=False)
+        print('Successfully stored HUD_CensusTractsData')
+
+
+
+    def db_dump_pct_section_eight_tracts(self, df):
+        df.to_sql("pct_section_eight_tracts", if_exists='replace', con=self.engine, index=False)
+        print('Successfully stored pct_section_eight_tracts')
+
+
+
+
     def db_dump_GeoMapping_MSA_to_CountyState(self, df):
         df.to_sql("GeoMapping_MSA_to_CountyState", if_exists='append', con=self.engine, index=False)
 
