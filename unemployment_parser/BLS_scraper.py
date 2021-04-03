@@ -16,11 +16,12 @@ urls = {
 
 
 # DEFINE CURRENT MONTH AND YEAR TO PULL. SET US UNEMPLOYMENT RATE
+# CHECK DATA RELEASES HERE: https://www.bls.gov/schedule/news_release/empsit.htm
 final_df = pd.DataFrame()
 delimeter = '\t'
-current_year = '2020'
-current_month = 'M11'
-US_UNEMPLOYMENT = 6.7
+current_year = '2021'
+current_month = 'M01'
+US_UNEMPLOYMENT = 6.3
 #https://fred.stlouisfed.org/series/UNRATE
 
 # Parse Data
@@ -90,7 +91,7 @@ for k,v in MSA_to_CBSA_conversion.items():
         final_df.loc[final_df['Geo_ID'] == k, 'Geo_ID'] = v
 
 # Get list of MSA and State Ids to make sure there is no update we miss
-geo_names_df = pd.read_excel('Geo names.xlsx',converters={'Geo_ID':str}).drop(columns=['Unnamed: 0', 'area_type_code', 'area_code', 'display_level', 'selectable', 'sort_sequence'])
+geo_names_df = pd.read_excel('Geo names.xls',converters={'Geo_ID':str}).drop(columns=['Unnamed: 0', 'area_type_code', 'area_code', 'display_level', 'selectable', 'sort_sequence'])
 
 common = final_df.merge(geo_names_df, on=['Geo_ID', 'Geo_ID'])
 no_match_from_final_df = final_df[~final_df.Geo_ID.isin(common.Geo_ID)]

@@ -23,9 +23,6 @@ Unemployment Update Directions:
 4. Run ESRI_County_Unemployment_Adjustment.py
 5. Run Store_All_Unemployment_Adjustments.py
 
-Update Census Tract Data
-1. Run import_mortgage_data.py
-
 
 ZIP Update Directions:
 ONLY NEEDED WHEN ESRI UPDATES
@@ -34,7 +31,8 @@ ONLY NEEDED WHEN ESRI UPDATES
     Run import_county_homevalues.py
     Run import_zip_homevalues.py
 
-1. Update Zillow files if needed
+
+1. Update Zillow files if needed for msa, county, and zip
 2. Run zillow_homevalue_parser.py
 3. Run run_zipcode_adjuster.py
 

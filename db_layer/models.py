@@ -74,20 +74,20 @@ class GeoMapping_MSA_to_CountyState(Base):
     STATEID = Column(String(2), unique=False)
 
 
-class HUD_CensusTractsData(Base):
-    __tablename__ = "HUD_CensusTractsData"
-
-    Geo_ID = Column(String(13), unique=False, primary_key=True)
-    Date = Column(Date, unique=False)
-    NinetyDaysDefault = Column(Integer, unique=False)
-    Foreclosures = Column(Integer, unique=False)
-    PctSectionEight = Column(Float, unique=False)
-
-class pct_section_eight_tracts(Base):
-    __tablename__ = "pct_section_eight_tracts"
-
-    Geo_ID = Column(String(13), unique=False, primary_key=True)
-    PctSectionEight = Column(Float, unique=False)
+# class HUD_CensusTractsData(Base):
+#     __tablename__ = "HUD_CensusTractsData"
+#
+#     Geo_ID = Column(String(13), unique=False, primary_key=True)
+#     Date = Column(Date, unique=False)
+#     NinetyDaysDefault = Column(Integer, unique=False)
+#     Foreclosures = Column(Integer, unique=False)
+#     PctSectionEight = Column(Float, unique=False)
+#
+# class pct_section_eight_tracts(Base):
+#     __tablename__ = "pct_section_eight_tracts"
+#
+#     Geo_ID = Column(String(13), unique=False, primary_key=True)
+#     PctSectionEight = Column(Float, unique=False)
 
 
 #########################

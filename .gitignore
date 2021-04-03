@@ -1,0 +1,10 @@
+
+venv/
+
+.idea/
+
+db_layer/__pycache__/
+
+geomapper/.DS_Store
+
+un_pw.json

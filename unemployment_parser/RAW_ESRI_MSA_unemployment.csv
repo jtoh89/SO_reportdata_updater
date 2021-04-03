@@ -1,11 +1,11 @@
 ,Geo_Type,Geo_Name,Geo_ID,UnemploymentRate
-0,US.States,Alabama,1,12.6
-1,US.States,Alaska,2,15.6
-2,US.States,Arizona,4,12.3
-3,US.States,Arkansas,5,11.5
-4,US.States,California,6,15.7
-5,US.States,Colorado,8,7.6
-6,US.States,Connecticut,9,9.6
+0,US.States,Alabama,01,12.6
+1,US.States,Alaska,02,15.6
+2,US.States,Arizona,04,12.3
+3,US.States,Arkansas,05,11.5
+4,US.States,California,06,15.7
+5,US.States,Colorado,08,7.6
+6,US.States,Connecticut,09,9.6
 7,US.States,Delaware,10,14.3
 8,US.States,District of Columbia,11,15.9
 9,US.States,Florida,12,8.2
@@ -17,13 +17,13 @@
 15,US.States,Iowa,19,11.9
 16,US.States,Kansas,20,11.9
 17,US.States,Kentucky,21,17.3
-18,US.States,Louisiana,22,18
+18,US.States,Louisiana,22,18.0
 19,US.States,Maine,23,13.7
 20,US.States,Maryland,24,10.7
-21,US.States,Massachusetts,25,15
+21,US.States,Massachusetts,25,15.0
 22,US.States,Michigan,26,20.9
 23,US.States,Minnesota,27,13.7
-24,US.States,Mississippi,28,13
+24,US.States,Mississippi,28,13.0
 25,US.States,Missouri,29,11.7
 26,US.States,Montana,30,12.9
 27,US.States,Nebraska,31,9.1
@@ -45,7 +45,7 @@
 43,US.States,Texas,48,9.2
 44,US.States,Utah,49,7.6
 45,US.States,Vermont,50,12.6
-46,US.States,Virginia,51,10
+46,US.States,Virginia,51,10.0
 47,US.States,Washington,53,15.5
 48,US.States,West Virginia,54,9.8
 49,US.States,Wisconsin,55,11.8
@@ -57,7 +57,7 @@
 55,US.CBSA,"Adrian, MI Micropolitan Statistical Area",10300,19.1
 56,US.CBSA,"Akron, OH Metropolitan Statistical Area",10420,15.7
 57,US.CBSA,"Alamogordo, NM Micropolitan Statistical Area",10460,15.1
-58,US.CBSA,"Albany, GA Metropolitan Statistical Area",10500,17
+58,US.CBSA,"Albany, GA Metropolitan Statistical Area",10500,17.0
 59,US.CBSA,"Albany-Lebanon, OR Metropolitan Statistical Area",10540,10.9
 60,US.CBSA,"Albany-Schenectady-Troy, NY Metropolitan Statistical Area",10580,11.2
 61,US.CBSA,"Albemarle, NC Micropolitan Statistical Area",10620,11.8
@@ -81,13 +81,13 @@
 79,US.CBSA,"Andrews, TX Micropolitan Statistical Area",11380,7.3
 80,US.CBSA,"Angola, IN Micropolitan Statistical Area",11420,13.4
 81,US.CBSA,"Ann Arbor, MI Metropolitan Statistical Area",11460,19.2
-82,US.CBSA,"Anniston-Oxford, AL Metropolitan Statistical Area",11500,15
+82,US.CBSA,"Anniston-Oxford, AL Metropolitan Statistical Area",11500,15.0
 83,US.CBSA,"Appleton, WI Metropolitan Statistical Area",11540,10.3
-84,US.CBSA,"Arcadia, FL Micropolitan Statistical Area",11580,7
+84,US.CBSA,"Arcadia, FL Micropolitan Statistical Area",11580,7.0
 85,US.CBSA,"Ardmore, OK Micropolitan Statistical Area",11620,10.9
 86,US.CBSA,"Arkadelphia, AR Micropolitan Statistical Area",11660,11.6
 87,US.CBSA,"Asheville, NC Metropolitan Statistical Area",11700,10.7
-88,US.CBSA,"Ashland, OH Micropolitan Statistical Area",11740,13
+88,US.CBSA,"Ashland, OH Micropolitan Statistical Area",11740,13.0
 89,US.CBSA,"Ashtabula, OH Micropolitan Statistical Area",11780,14.9
 90,US.CBSA,"Astoria, OR Micropolitan Statistical Area",11820,11.5
 91,US.CBSA,"Atchison, KS Micropolitan Statistical Area",11860,13.6
@@ -99,7 +99,7 @@
 97,US.CBSA,"Atlantic City-Hammonton, NJ Metropolitan Statistical Area",12100,21.2
 98,US.CBSA,"Atmore, AL Micropolitan Statistical Area",12120,16.7
 99,US.CBSA,"Auburn, IN Micropolitan Statistical Area",12140,12.3
-100,US.CBSA,"Auburn, NY Micropolitan Statistical Area",12180,11
+100,US.CBSA,"Auburn, NY Micropolitan Statistical Area",12180,11.0
 101,US.CBSA,"Auburn-Opelika, AL Metropolitan Statistical Area",12220,12.4
 102,US.CBSA,"Augusta-Richmond County, GA-SC Metropolitan Statistical Area",12260,13.5
 103,US.CBSA,"Augusta-Waterville, ME Micropolitan Statistical Area",12300,14.1
@@ -113,12 +113,12 @@
 111,US.CBSA,"Bardstown, KY Micropolitan Statistical Area",12680,16.6
 112,US.CBSA,"Barnstable Town, MA Metropolitan Statistical Area",12700,15.5
 113,US.CBSA,"Barre, VT Micropolitan Statistical Area",12740,11.8
-114,US.CBSA,"Bartlesville, OK Micropolitan Statistical Area",12780,9
+114,US.CBSA,"Bartlesville, OK Micropolitan Statistical Area",12780,9.0
 115,US.CBSA,"Batavia, NY Micropolitan Statistical Area",12860,10.5
 116,US.CBSA,"Batesville, AR Micropolitan Statistical Area",12900,11.1
 117,US.CBSA,"Baton Rouge, LA Metropolitan Statistical Area",12940,17.1
 118,US.CBSA,"Battle Creek, MI Metropolitan Statistical Area",12980,21.7
-119,US.CBSA,"Bay City, MI Metropolitan Statistical Area",13020,21
+119,US.CBSA,"Bay City, MI Metropolitan Statistical Area",13020,21.0
 120,US.CBSA,"Bay City, TX Micropolitan Statistical Area",13060,9.6
 121,US.CBSA,"Beatrice, NE Micropolitan Statistical Area",13100,7.3
 122,US.CBSA,"Beaumont-Port Arthur, TX Metropolitan Statistical Area",13140,8.8
@@ -138,13 +138,13 @@
 136,US.CBSA,"Big Stone Gap, VA Micropolitan Statistical Area",13720,12.9
 137,US.CBSA,"Billings, MT Metropolitan Statistical Area",13740,12.9
 138,US.CBSA,"Binghamton, NY Metropolitan Statistical Area",13780,12.2
-139,US.CBSA,"Birmingham-Hoover, AL Metropolitan Statistical Area",13820,12
+139,US.CBSA,"Birmingham-Hoover, AL Metropolitan Statistical Area",13820,12.0
 140,US.CBSA,"Bismarck, ND Metropolitan Statistical Area",13900,8.7
 141,US.CBSA,"Blackfoot, ID Micropolitan Statistical Area",13940,9.8
 142,US.CBSA,"Blacksburg-Christiansburg, VA Metropolitan Statistical Area",13980,10.9
 143,US.CBSA,"Bloomington, IL Metropolitan Statistical Area",14010,10.2
 144,US.CBSA,"Bloomington, IN Metropolitan Statistical Area",14020,15.1
-145,US.CBSA,"Bloomsburg-Berwick, PA Metropolitan Statistical Area",14100,20
+145,US.CBSA,"Bloomsburg-Berwick, PA Metropolitan Statistical Area",14100,20.0
 146,US.CBSA,"Bluefield, WV-VA Micropolitan Statistical Area",14140,10.3
 147,US.CBSA,"Blytheville, AR Micropolitan Statistical Area",14180,14.8
 148,US.CBSA,"Bogalusa, LA Micropolitan Statistical Area",14220,21.3
@@ -198,7 +198,7 @@
 196,US.CBSA,"Cedar Rapids, IA Metropolitan Statistical Area",16300,11.8
 197,US.CBSA,"Cedartown, GA Micropolitan Statistical Area",16340,13.2
 198,US.CBSA,"Celina, OH Micropolitan Statistical Area",16380,13.8
-199,US.CBSA,"Central City, KY Micropolitan Statistical Area",16420,18
+199,US.CBSA,"Central City, KY Micropolitan Statistical Area",16420,18.0
 200,US.CBSA,"Centralia, IL Micropolitan Statistical Area",16460,12.9
 201,US.CBSA,"Centralia, WA Micropolitan Statistical Area",16500,17.2
 202,US.CBSA,"Chambersburg-Waynesboro, PA Metropolitan Statistical Area",16540,19.7
@@ -232,7 +232,7 @@
 230,US.CBSA,"Columbia, MO Metropolitan Statistical Area",17860,11.3
 231,US.CBSA,"Columbia, SC Metropolitan Statistical Area",17900,10.2
 232,US.CBSA,"Columbus, GA-AL Metropolitan Statistical Area",17980,15.2
-233,US.CBSA,"Columbus, IN Metropolitan Statistical Area",18020,12
+233,US.CBSA,"Columbus, IN Metropolitan Statistical Area",18020,12.0
 234,US.CBSA,"Columbus, MS Micropolitan Statistical Area",18060,13.5
 235,US.CBSA,"Columbus, NE Micropolitan Statistical Area",18100,8.1
 236,US.CBSA,"Columbus, OH Metropolitan Statistical Area",18140,14.9
@@ -244,7 +244,7 @@
 242,US.CBSA,"Corinth, MS Micropolitan Statistical Area",18420,11.4
 243,US.CBSA,"Cornelia, GA Micropolitan Statistical Area",18460,12.7
 244,US.CBSA,"Corning, NY Micropolitan Statistical Area",18500,11.3
-245,US.CBSA,"Corpus Christi, TX Metropolitan Statistical Area",18580,9
+245,US.CBSA,"Corpus Christi, TX Metropolitan Statistical Area",18580,9.0
 246,US.CBSA,"Corsicana, TX Micropolitan Statistical Area",18620,11.8
 247,US.CBSA,"Cortland, NY Micropolitan Statistical Area",18660,10.4
 248,US.CBSA,"Corvallis, OR Metropolitan Statistical Area",18700,9.9
@@ -265,11 +265,11 @@
 263,US.CBSA,"Daphne-Fairhope-Foley, AL Metropolitan Statistical Area",19300,11.7
 264,US.CBSA,"Davenport-Moline-Rock Island, IA-IL Metropolitan Statistical Area",19340,12.3
 265,US.CBSA,"Dayton, TN Micropolitan Statistical Area",19420,12.1
-266,US.CBSA,"Dayton-Kettering, OH Metropolitan Statistical Area",19430,16
+266,US.CBSA,"Dayton-Kettering, OH Metropolitan Statistical Area",19430,16.0
 267,US.CBSA,"Decatur, AL Metropolitan Statistical Area",19460,11.8
 268,US.CBSA,"Decatur, IL Metropolitan Statistical Area",19500,14.2
 269,US.CBSA,"Decatur, IN Micropolitan Statistical Area",19540,12.2
-270,US.CBSA,"Defiance, OH Micropolitan Statistical Area",19580,15
+270,US.CBSA,"Defiance, OH Micropolitan Statistical Area",19580,15.0
 271,US.CBSA,"Del Rio, TX Micropolitan Statistical Area",19620,9.3
 272,US.CBSA,"Deltona-Daytona Beach-Ormond Beach, FL Metropolitan Statistical Area",19660,7.9
 273,US.CBSA,"Deming, NM Micropolitan Statistical Area",19700,13.3
@@ -303,7 +303,7 @@
 301,US.CBSA,"El Centro, CA Metropolitan Statistical Area",20940,23.9
 302,US.CBSA,"El Dorado, AR Micropolitan Statistical Area",20980,13.2
 303,US.CBSA,"Elizabeth City, NC Micropolitan Statistical Area",21020,11.7
-304,US.CBSA,"Elizabethtown-Fort Knox, KY Metropolitan Statistical Area",21060,18
+304,US.CBSA,"Elizabethtown-Fort Knox, KY Metropolitan Statistical Area",21060,18.0
 305,US.CBSA,"Elk City, OK Micropolitan Statistical Area",21120,10.4
 306,US.CBSA,"Elkhart-Goshen, IN Metropolitan Statistical Area",21140,12.9
 307,US.CBSA,"Elkins, WV Micropolitan Statistical Area",21180,10.3
@@ -323,13 +323,13 @@
 321,US.CBSA,"Evanston, WY Micropolitan Statistical Area",21740,10.2
 322,US.CBSA,"Evansville, IN-KY Metropolitan Statistical Area",21780,13.2
 323,US.CBSA,"Fairbanks, AK Metropolitan Statistical Area",21820,14.9
-324,US.CBSA,"Fairfield, IA Micropolitan Statistical Area",21840,13
+324,US.CBSA,"Fairfield, IA Micropolitan Statistical Area",21840,13.0
 325,US.CBSA,"Fairmont, MN Micropolitan Statistical Area",21860,12.4
 326,US.CBSA,"Fairmont, WV Micropolitan Statistical Area",21900,8.9
-327,US.CBSA,"Fallon, NV Micropolitan Statistical Area",21980,18
+327,US.CBSA,"Fallon, NV Micropolitan Statistical Area",21980,18.0
 328,US.CBSA,"Fargo, ND-MN Metropolitan Statistical Area",22020,11.1
 329,US.CBSA,"Faribault-Northfield, MN Micropolitan Statistical Area",22060,12.6
-330,US.CBSA,"Farmington, MO Micropolitan Statistical Area",22100,12
+330,US.CBSA,"Farmington, MO Micropolitan Statistical Area",22100,12.0
 331,US.CBSA,"Farmington, NM Metropolitan Statistical Area",22140,13.9
 332,US.CBSA,"Fayetteville, NC Metropolitan Statistical Area",22180,13.8
 333,US.CBSA,"Fayetteville-Springdale-Rogers, AR Metropolitan Statistical Area",22220,10.1
@@ -343,18 +343,18 @@
 341,US.CBSA,"Florence-Muscle Shoals, AL Metropolitan Statistical Area",22520,12.6
 342,US.CBSA,"Fond du Lac, WI Metropolitan Statistical Area",22540,10.8
 343,US.CBSA,"Forest City, NC Micropolitan Statistical Area",22580,12.2
-344,US.CBSA,"Forrest City, AR Micropolitan Statistical Area",22620,14
+344,US.CBSA,"Forrest City, AR Micropolitan Statistical Area",22620,14.0
 345,US.CBSA,"Fort Collins, CO Metropolitan Statistical Area",22660,7.3
 346,US.CBSA,"Fort Dodge, IA Micropolitan Statistical Area",22700,13.1
 347,US.CBSA,"Fort Leonard Wood, MO Micropolitan Statistical Area",22780,14.8
 348,US.CBSA,"Fort Madison-Keokuk, IA-IL-MO Micropolitan Statistical Area",22800,12.4
-349,US.CBSA,"Fort Morgan, CO Micropolitan Statistical Area",22820,8
+349,US.CBSA,"Fort Morgan, CO Micropolitan Statistical Area",22820,8.0
 350,US.CBSA,"Fort Payne, AL Micropolitan Statistical Area",22840,9.9
 351,US.CBSA,"Fort Polk South, LA Micropolitan Statistical Area",22860,18.2
 352,US.CBSA,"Fort Smith, AR-OK Metropolitan Statistical Area",22900,11.1
 353,US.CBSA,"Fort Wayne, IN Metropolitan Statistical Area",23060,13.7
 354,US.CBSA,"Frankfort, IN Micropolitan Statistical Area",23140,11.8
-355,US.CBSA,"Frankfort, KY Micropolitan Statistical Area",23180,18
+355,US.CBSA,"Frankfort, KY Micropolitan Statistical Area",23180,18.0
 356,US.CBSA,"Fredericksburg, TX Micropolitan Statistical Area",23240,9.4
 357,US.CBSA,"Freeport, IL Micropolitan Statistical Area",23300,13.2
 358,US.CBSA,"Fremont, NE Micropolitan Statistical Area",23340,9.3
@@ -379,13 +379,13 @@
 377,US.CBSA,"Goldsboro, NC Metropolitan Statistical Area",24140,13.2
 378,US.CBSA,"Granbury, TX Micropolitan Statistical Area",24180,7.1
 379,US.CBSA,"Grand Forks, ND-MN Metropolitan Statistical Area",24220,12.4
-380,US.CBSA,"Grand Island, NE Metropolitan Statistical Area",24260,10
+380,US.CBSA,"Grand Island, NE Metropolitan Statistical Area",24260,10.0
 381,US.CBSA,"Grand Junction, CO Metropolitan Statistical Area",24300,9.1
 382,US.CBSA,"Grand Rapids, MN Micropolitan Statistical Area",24330,14.4
 383,US.CBSA,"Grand Rapids-Kentwood, MI Metropolitan Statistical Area",24340,19.1
 384,US.CBSA,"Grants, NM Micropolitan Statistical Area",24380,20.6
 385,US.CBSA,"Grants Pass, OR Metropolitan Statistical Area",24420,10.7
-386,US.CBSA,"Great Bend, KS Micropolitan Statistical Area",24460,11
+386,US.CBSA,"Great Bend, KS Micropolitan Statistical Area",24460,11.0
 387,US.CBSA,"Great Falls, MT Metropolitan Statistical Area",24500,13.3
 388,US.CBSA,"Greeley, CO Metropolitan Statistical Area",24540,7.5
 389,US.CBSA,"Green Bay, WI Metropolitan Statistical Area",24580,11.8
@@ -399,12 +399,12 @@
 397,US.CBSA,"Greenwood, MS Micropolitan Statistical Area",24900,13.2
 398,US.CBSA,"Greenwood, SC Micropolitan Statistical Area",24940,12.8
 399,US.CBSA,"Grenada, MS Micropolitan Statistical Area",24980,12.3
-400,US.CBSA,"Gulfport-Biloxi, MS Metropolitan Statistical Area",25060,14
+400,US.CBSA,"Gulfport-Biloxi, MS Metropolitan Statistical Area",25060,14.0
 401,US.CBSA,"Guymon, OK Micropolitan Statistical Area",25100,7.7
 402,US.CBSA,"Hagerstown-Martinsburg, MD-WV Metropolitan Statistical Area",25180,10.9
 403,US.CBSA,"Hailey, ID Micropolitan Statistical Area",25200,13.2
 404,US.CBSA,"Hammond, LA Metropolitan Statistical Area",25220,19.9
-405,US.CBSA,"Hanford-Corcoran, CA Metropolitan Statistical Area",25260,15
+405,US.CBSA,"Hanford-Corcoran, CA Metropolitan Statistical Area",25260,15.0
 406,US.CBSA,"Hannibal, MO Micropolitan Statistical Area",25300,11.7
 407,US.CBSA,"Harrisburg-Carlisle, PA Metropolitan Statistical Area",25420,19.8
 408,US.CBSA,"Harrison, AR Micropolitan Statistical Area",25460,11.1
@@ -419,22 +419,22 @@
 417,US.CBSA,"Henderson, NC Micropolitan Statistical Area",25780,14.1
 418,US.CBSA,"Hereford, TX Micropolitan Statistical Area",25820,7.8
 419,US.CBSA,"Hermiston-Pendleton, OR Micropolitan Statistical Area",25840,11.5
-420,US.CBSA,"Hickory-Lenoir-Morganton, NC Metropolitan Statistical Area",25860,12
+420,US.CBSA,"Hickory-Lenoir-Morganton, NC Metropolitan Statistical Area",25860,12.0
 421,US.CBSA,"Hillsdale, MI Micropolitan Statistical Area",25880,18.5
 422,US.CBSA,"Hilo, HI Micropolitan Statistical Area",25900,21.4
 423,US.CBSA,"Hilton Head Island-Bluffton, SC Metropolitan Statistical Area",25940,11.5
 424,US.CBSA,"Hinesville, GA Metropolitan Statistical Area",25980,18.2
-425,US.CBSA,"Hobbs, NM Micropolitan Statistical Area",26020,11
-426,US.CBSA,"Holland, MI Micropolitan Statistical Area",26090,17
+425,US.CBSA,"Hobbs, NM Micropolitan Statistical Area",26020,11.0
+426,US.CBSA,"Holland, MI Micropolitan Statistical Area",26090,17.0
 427,US.CBSA,"Homosassa Springs, FL Metropolitan Statistical Area",26140,9.6
 428,US.CBSA,"Hood River, OR Micropolitan Statistical Area",26220,9.2
-429,US.CBSA,"Hope, AR Micropolitan Statistical Area",26260,11
+429,US.CBSA,"Hope, AR Micropolitan Statistical Area",26260,11.0
 430,US.CBSA,"Hot Springs, AR Metropolitan Statistical Area",26300,14.3
 431,US.CBSA,"Houghton, MI Micropolitan Statistical Area",26340,21.3
 432,US.CBSA,"Houma-Thibodaux, LA Metropolitan Statistical Area",26380,16.7
 433,US.CBSA,"Houston-The Woodlands-Sugar Land, TX Metropolitan Statistical Area",26420,9.1
 434,US.CBSA,"Hudson, NY Micropolitan Statistical Area",26460,10.4
-435,US.CBSA,"Huntingdon, PA Micropolitan Statistical Area",26500,20
+435,US.CBSA,"Huntingdon, PA Micropolitan Statistical Area",26500,20.0
 436,US.CBSA,"Huntington, IN Micropolitan Statistical Area",26540,11.6
 437,US.CBSA,"Huntington-Ashland, WV-KY-OH Metropolitan Statistical Area",26580,12.5
 438,US.CBSA,"Huntsville, AL Metropolitan Statistical Area",26620,11.6
@@ -443,7 +443,7 @@
 441,US.CBSA,"Hutchinson, KS Micropolitan Statistical Area",26740,11.3
 442,US.CBSA,"Hutchinson, MN Micropolitan Statistical Area",26780,11.8
 443,US.CBSA,"Idaho Falls, ID Metropolitan Statistical Area",26820,10.9
-444,US.CBSA,"Indiana, PA Micropolitan Statistical Area",26860,23
+444,US.CBSA,"Indiana, PA Micropolitan Statistical Area",26860,23.0
 445,US.CBSA,"Indianapolis-Carmel-Anderson, IN Metropolitan Statistical Area",26900,13.5
 446,US.CBSA,"Indianola, MS Micropolitan Statistical Area",26940,18.8
 447,US.CBSA,"Iowa City, IA Metropolitan Statistical Area",26980,12.3
@@ -456,7 +456,7 @@
 454,US.CBSA,"Jackson, WY-ID Micropolitan Statistical Area",27220,9.6
 455,US.CBSA,"Jacksonville, FL Metropolitan Statistical Area",27260,8.2
 456,US.CBSA,"Jacksonville, IL Micropolitan Statistical Area",27300,11.6
-457,US.CBSA,"Jacksonville, NC Metropolitan Statistical Area",27340,15
+457,US.CBSA,"Jacksonville, NC Metropolitan Statistical Area",27340,15.0
 458,US.CBSA,"Jacksonville, TX Micropolitan Statistical Area",27380,8.5
 459,US.CBSA,"Jamestown, ND Micropolitan Statistical Area",27420,9.5
 460,US.CBSA,"Jamestown-Dunkirk-Fredonia, NY Micropolitan Statistical Area",27460,12.2
@@ -509,29 +509,29 @@
 507,US.CBSA,"Lamesa, TX Micropolitan Statistical Area",29500,10.7
 508,US.CBSA,"Lancaster, PA Metropolitan Statistical Area",29540,19.3
 509,US.CBSA,"Lansing-East Lansing, MI Metropolitan Statistical Area",29620,20.6
-510,US.CBSA,"Laramie, WY Micropolitan Statistical Area",29660,10
+510,US.CBSA,"Laramie, WY Micropolitan Statistical Area",29660,10.0
 511,US.CBSA,"Laredo, TX Metropolitan Statistical Area",29700,9.6
 512,US.CBSA,"Las Cruces, NM Metropolitan Statistical Area",29740,14.2
 513,US.CBSA,"Las Vegas, NM Micropolitan Statistical Area",29780,10.6
 514,US.CBSA,"Las Vegas-Henderson-Paradise, NV Metropolitan Statistical Area",29820,19.7
-515,US.CBSA,"Laurel, MS Micropolitan Statistical Area",29860,11
-516,US.CBSA,"Laurinburg, NC Micropolitan Statistical Area",29900,15
+515,US.CBSA,"Laurel, MS Micropolitan Statistical Area",29860,11.0
+516,US.CBSA,"Laurinburg, NC Micropolitan Statistical Area",29900,15.0
 517,US.CBSA,"Lawrence, KS Metropolitan Statistical Area",29940,13.3
 518,US.CBSA,"Lawrenceburg, TN Micropolitan Statistical Area",29980,13.7
 519,US.CBSA,"Lawton, OK Metropolitan Statistical Area",30020,12.9
 520,US.CBSA,"Lebanon, MO Micropolitan Statistical Area",30060,12.1
 521,US.CBSA,"Lebanon, NH-VT Micropolitan Statistical Area",30100,14.3
-522,US.CBSA,"Lebanon, PA Metropolitan Statistical Area",30140,21
+522,US.CBSA,"Lebanon, PA Metropolitan Statistical Area",30140,21.0
 523,US.CBSA,"Levelland, TX Micropolitan Statistical Area",30220,10.3
 524,US.CBSA,"Lewisburg, PA Micropolitan Statistical Area",30260,18.9
 525,US.CBSA,"Lewisburg, TN Micropolitan Statistical Area",30280,11.7
-526,US.CBSA,"Lewiston, ID-WA Metropolitan Statistical Area",30300,13
+526,US.CBSA,"Lewiston, ID-WA Metropolitan Statistical Area",30300,13.0
 527,US.CBSA,"Lewiston-Auburn, ME Metropolitan Statistical Area",30340,14.2
-528,US.CBSA,"Lewistown, PA Micropolitan Statistical Area",30380,19
+528,US.CBSA,"Lewistown, PA Micropolitan Statistical Area",30380,19.0
 529,US.CBSA,"Lexington, NE Micropolitan Statistical Area",30420,7.8
 530,US.CBSA,"Lexington-Fayette, KY Metropolitan Statistical Area",30460,17.5
 531,US.CBSA,"Liberal, KS Micropolitan Statistical Area",30580,14.1
-532,US.CBSA,"Lima, OH Metropolitan Statistical Area",30620,16
+532,US.CBSA,"Lima, OH Metropolitan Statistical Area",30620,16.0
 533,US.CBSA,"Lincoln, IL Micropolitan Statistical Area",30660,10.9
 534,US.CBSA,"Lincoln, NE Metropolitan Statistical Area",30700,9.5
 535,US.CBSA,"Little Rock-North Little Rock-Conway, AR Metropolitan Statistical Area",30780,11.4
@@ -540,7 +540,7 @@
 538,US.CBSA,"Logansport, IN Micropolitan Statistical Area",30900,12.5
 539,US.CBSA,"London, KY Micropolitan Statistical Area",30940,18.9
 540,US.CBSA,"Longview, TX Metropolitan Statistical Area",30980,8.9
-541,US.CBSA,"Longview, WA Metropolitan Statistical Area",31020,17
+541,US.CBSA,"Longview, WA Metropolitan Statistical Area",31020,17.0
 542,US.CBSA,"Los Alamos, NM Micropolitan Statistical Area",31060,8.1
 543,US.CBSA,"Los Angeles-Long Beach-Anaheim, CA Metropolitan Statistical Area",31080,16.3
 544,US.CBSA,"Louisville/Jefferson County, KY-IN Metropolitan Statistical Area",31140,16.5
@@ -562,7 +562,7 @@
 560,US.CBSA,"Manhattan, KS Metropolitan Statistical Area",31740,13.4
 561,US.CBSA,"Manitowoc, WI Micropolitan Statistical Area",31820,10.2
 562,US.CBSA,"Mankato, MN Metropolitan Statistical Area",31860,13.7
-563,US.CBSA,"Mansfield, OH Metropolitan Statistical Area",31900,16
+563,US.CBSA,"Mansfield, OH Metropolitan Statistical Area",31900,16.0
 564,US.CBSA,"Marietta, OH Micropolitan Statistical Area",31930,13.8
 565,US.CBSA,"Marinette, WI-MI Micropolitan Statistical Area",31940,15.7
 566,US.CBSA,"Marion, IN Micropolitan Statistical Area",31980,15.2
@@ -571,7 +571,7 @@
 569,US.CBSA,"Marquette, MI Micropolitan Statistical Area",32100,21.5
 570,US.CBSA,"Marshall, MN Micropolitan Statistical Area",32140,12.5
 571,US.CBSA,"Marshall, MO Micropolitan Statistical Area",32180,10.5
-572,US.CBSA,"Marshalltown, IA Micropolitan Statistical Area",32260,11
+572,US.CBSA,"Marshalltown, IA Micropolitan Statistical Area",32260,11.0
 573,US.CBSA,"Martin, TN Micropolitan Statistical Area",32280,14.7
 574,US.CBSA,"Martinsville, VA Micropolitan Statistical Area",32300,11.6
 575,US.CBSA,"Maryville, MO Micropolitan Statistical Area",32340,12.9
@@ -579,17 +579,17 @@
 577,US.CBSA,"Mayfield, KY Micropolitan Statistical Area",32460,17.1
 578,US.CBSA,"Maysville, KY Micropolitan Statistical Area",32500,17.3
 579,US.CBSA,"McAlester, OK Micropolitan Statistical Area",32540,10.7
-580,US.CBSA,"McAllen-Edinburg-Mission, TX Metropolitan Statistical Area",32580,11
+580,US.CBSA,"McAllen-Edinburg-Mission, TX Metropolitan Statistical Area",32580,11.0
 581,US.CBSA,"McComb, MS Micropolitan Statistical Area",32620,12.1
 582,US.CBSA,"McMinnville, TN Micropolitan Statistical Area",32660,11.9
-583,US.CBSA,"McPherson, KS Micropolitan Statistical Area",32700,9
+583,US.CBSA,"McPherson, KS Micropolitan Statistical Area",32700,9.0
 584,US.CBSA,"Meadville, PA Micropolitan Statistical Area",32740,19.6
 585,US.CBSA,"Medford, OR Metropolitan Statistical Area",32780,10.3
 586,US.CBSA,"Memphis, TN-MS-AR Metropolitan Statistical Area",32820,12.6
 587,US.CBSA,"Menomonie, WI Micropolitan Statistical Area",32860,12.3
 588,US.CBSA,"Merced, CA Metropolitan Statistical Area",32900,18.1
 589,US.CBSA,"Meridian, MS Micropolitan Statistical Area",32940,11.4
-590,US.CBSA,"Mexico, MO Micropolitan Statistical Area",33020,12
+590,US.CBSA,"Mexico, MO Micropolitan Statistical Area",33020,12.0
 591,US.CBSA,"Miami, OK Micropolitan Statistical Area",33060,11.9
 592,US.CBSA,"Miami-Fort Lauderdale-Pompano Beach, FL Metropolitan Statistical Area",33100,8.1
 593,US.CBSA,"Michigan City-La Porte, IN Metropolitan Statistical Area",33140,15.1
@@ -599,11 +599,11 @@
 597,US.CBSA,"Milledgeville, GA Micropolitan Statistical Area",33300,15.6
 598,US.CBSA,"Milwaukee-Waukesha, WI Metropolitan Statistical Area",33340,12.5
 599,US.CBSA,"Minden, LA Micropolitan Statistical Area",33380,17.4
-600,US.CBSA,"Mineral Wells, TX Micropolitan Statistical Area",33420,10
+600,US.CBSA,"Mineral Wells, TX Micropolitan Statistical Area",33420,10.0
 601,US.CBSA,"Minneapolis-St. Paul-Bloomington, MN-WI Metropolitan Statistical Area",33460,13.7
 602,US.CBSA,"Minot, ND Micropolitan Statistical Area",33500,10.8
 603,US.CBSA,"Missoula, MT Metropolitan Statistical Area",33540,14.9
-604,US.CBSA,"Mitchell, SD Micropolitan Statistical Area",33580,6
+604,US.CBSA,"Mitchell, SD Micropolitan Statistical Area",33580,6.0
 605,US.CBSA,"Moberly, MO Micropolitan Statistical Area",33620,12.7
 606,US.CBSA,"Mobile, AL Metropolitan Statistical Area",33660,13.4
 607,US.CBSA,"Modesto, CA Metropolitan Statistical Area",33700,17.1
@@ -622,8 +622,8 @@
 620,US.CBSA,"Mountain Home, ID Micropolitan Statistical Area",34300,11.2
 621,US.CBSA,"Mount Airy, NC Micropolitan Statistical Area",34340,10.5
 622,US.CBSA,"Mount Gay-Shamrock, WV Micropolitan Statistical Area",34350,14.1
-623,US.CBSA,"Mount Pleasant, MI Micropolitan Statistical Area",34380,28
-624,US.CBSA,"Mount Pleasant, TX Micropolitan Statistical Area",34420,9
+623,US.CBSA,"Mount Pleasant, MI Micropolitan Statistical Area",34380,28.0
+624,US.CBSA,"Mount Pleasant, TX Micropolitan Statistical Area",34420,9.0
 625,US.CBSA,"Mount Sterling, KY Micropolitan Statistical Area",34460,16.6
 626,US.CBSA,"Mount Vernon, IL Micropolitan Statistical Area",34500,13.3
 627,US.CBSA,"Mount Vernon, OH Micropolitan Statistical Area",34540,14.8
@@ -646,12 +646,12 @@
 644,US.CBSA,"New Castle, PA Micropolitan Statistical Area",35260,20.5
 645,US.CBSA,"New Haven-Milford, CT Metropolitan Statistical Area",35300,9.9
 646,US.CBSA,"New Orleans-Metairie, LA Metropolitan Statistical Area",35380,18.6
-647,US.CBSA,"New Philadelphia-Dover, OH Micropolitan Statistical Area",35420,14
+647,US.CBSA,"New Philadelphia-Dover, OH Micropolitan Statistical Area",35420,14.0
 648,US.CBSA,"Newport, OR Micropolitan Statistical Area",35440,12.1
 649,US.CBSA,"Newport, TN Micropolitan Statistical Area",35460,14.2
 650,US.CBSA,"New Ulm, MN Micropolitan Statistical Area",35580,11.5
 651,US.CBSA,"New York-Newark-Jersey City, NY-NJ-PA Metropolitan Statistical Area",35620,13.2
-652,US.CBSA,"Niles, MI Metropolitan Statistical Area",35660,21
+652,US.CBSA,"Niles, MI Metropolitan Statistical Area",35660,21.0
 653,US.CBSA,"Nogales, AZ Micropolitan Statistical Area",35700,13.7
 654,US.CBSA,"Norfolk, NE Micropolitan Statistical Area",35740,7.6
 655,US.CBSA,"North Platte, NE Micropolitan Statistical Area",35820,8.9
@@ -664,13 +664,13 @@
 662,US.CBSA,"Ocala, FL Metropolitan Statistical Area",36100,9.1
 663,US.CBSA,"Ocean City, NJ Metropolitan Statistical Area",36140,15.4
 664,US.CBSA,"Odessa, TX Metropolitan Statistical Area",36220,9.8
-665,US.CBSA,"Ogden-Clearfield, UT Metropolitan Statistical Area",36260,7
+665,US.CBSA,"Ogden-Clearfield, UT Metropolitan Statistical Area",36260,7.0
 666,US.CBSA,"Ogdensburg-Massena, NY Micropolitan Statistical Area",36300,13.5
-667,US.CBSA,"Oil City, PA Micropolitan Statistical Area",36340,21
-668,US.CBSA,"Okeechobee, FL Micropolitan Statistical Area",36380,10
+667,US.CBSA,"Oil City, PA Micropolitan Statistical Area",36340,21.0
+668,US.CBSA,"Okeechobee, FL Micropolitan Statistical Area",36380,10.0
 669,US.CBSA,"Oklahoma City, OK Metropolitan Statistical Area",36420,9.9
-670,US.CBSA,"Olean, NY Micropolitan Statistical Area",36460,12
-671,US.CBSA,"Olympia-Lacey-Tumwater, WA Metropolitan Statistical Area",36500,17
+670,US.CBSA,"Olean, NY Micropolitan Statistical Area",36460,12.0
+671,US.CBSA,"Olympia-Lacey-Tumwater, WA Metropolitan Statistical Area",36500,17.0
 672,US.CBSA,"Omaha-Council Bluffs, NE-IA Metropolitan Statistical Area",36540,9.7
 673,US.CBSA,"Oneonta, NY Micropolitan Statistical Area",36580,12.5
 674,US.CBSA,"Ontario, OR-ID Micropolitan Statistical Area",36620,11.9
@@ -688,7 +688,7 @@
 686,US.CBSA,"Oxford, MS Micropolitan Statistical Area",37060,11.4
 687,US.CBSA,"Oxnard-Thousand Oaks-Ventura, CA Metropolitan Statistical Area",37100,14.1
 688,US.CBSA,"Ozark, AL Micropolitan Statistical Area",37120,14.2
-689,US.CBSA,"Paducah, KY-IL Micropolitan Statistical Area",37140,16
+689,US.CBSA,"Paducah, KY-IL Micropolitan Statistical Area",37140,16.0
 690,US.CBSA,"Pahrump, NV Micropolitan Statistical Area",37220,20.8
 691,US.CBSA,"Palatka, FL Micropolitan Statistical Area",37260,9.3
 692,US.CBSA,"Palestine, TX Micropolitan Statistical Area",37300,7.6
@@ -701,7 +701,7 @@
 699,US.CBSA,"Parkersburg-Vienna, WV Metropolitan Statistical Area",37620,9.6
 700,US.CBSA,"Parsons, KS Micropolitan Statistical Area",37660,10.5
 701,US.CBSA,"Payson, AZ Micropolitan Statistical Area",37740,13.8
-702,US.CBSA,"Pearsall, TX Micropolitan Statistical Area",37770,10
+702,US.CBSA,"Pearsall, TX Micropolitan Statistical Area",37770,10.0
 703,US.CBSA,"Pecos, TX Micropolitan Statistical Area",37780,9.2
 704,US.CBSA,"Pella, IA Micropolitan Statistical Area",37800,10.9
 705,US.CBSA,"Pensacola-Ferry Pass-Brent, FL Metropolitan Statistical Area",37860,8.1
@@ -710,11 +710,11 @@
 708,US.CBSA,"Philadelphia-Camden-Wilmington, PA-NJ-DE-MD Metropolitan Statistical Area",37980,18.9
 709,US.CBSA,"Phoenix-Mesa-Chandler, AZ Metropolitan Statistical Area",38060,11.4
 710,US.CBSA,"Picayune, MS Micropolitan Statistical Area",38100,12.7
-711,US.CBSA,"Pierre, SD Micropolitan Statistical Area",38180,4
+711,US.CBSA,"Pierre, SD Micropolitan Statistical Area",38180,4.0
 712,US.CBSA,"Pine Bluff, AR Metropolitan Statistical Area",38220,14.6
-713,US.CBSA,"Pinehurst-Southern Pines, NC Micropolitan Statistical Area",38240,12
+713,US.CBSA,"Pinehurst-Southern Pines, NC Micropolitan Statistical Area",38240,12.0
 714,US.CBSA,"Pittsburg, KS Micropolitan Statistical Area",38260,12.7
-715,US.CBSA,"Pittsburgh, PA Metropolitan Statistical Area",38300,20
+715,US.CBSA,"Pittsburgh, PA Metropolitan Statistical Area",38300,20.0
 716,US.CBSA,"Pittsfield, MA Metropolitan Statistical Area",38340,15.9
 717,US.CBSA,"Plainview, TX Micropolitan Statistical Area",38380,10.1
 718,US.CBSA,"Platteville, WI Micropolitan Statistical Area",38420,11.7
@@ -740,7 +740,7 @@
 738,US.CBSA,"Providence-Warwick, RI-MA Metropolitan Statistical Area",39300,18.2
 739,US.CBSA,"Provo-Orem, UT Metropolitan Statistical Area",39340,7.4
 740,US.CBSA,"Pueblo, CO Metropolitan Statistical Area",39380,10.6
-741,US.CBSA,"Pullman, WA Micropolitan Statistical Area",39420,18
+741,US.CBSA,"Pullman, WA Micropolitan Statistical Area",39420,18.0
 742,US.CBSA,"Punta Gorda, FL Metropolitan Statistical Area",39460,9.1
 743,US.CBSA,"Quincy, IL-MO Micropolitan Statistical Area",39500,10.8
 744,US.CBSA,"Racine, WI Metropolitan Statistical Area",39540,12.8
@@ -773,7 +773,7 @@
 771,US.CBSA,"Rome, GA Metropolitan Statistical Area",40660,14.6
 772,US.CBSA,"Roseburg, OR Micropolitan Statistical Area",40700,11.1
 773,US.CBSA,"Roswell, NM Micropolitan Statistical Area",40740,12.4
-774,US.CBSA,"Ruidoso, NM Micropolitan Statistical Area",40760,13
+774,US.CBSA,"Ruidoso, NM Micropolitan Statistical Area",40760,13.0
 775,US.CBSA,"Russellville, AR Micropolitan Statistical Area",40780,12.4
 776,US.CBSA,"Ruston, LA Micropolitan Statistical Area",40820,20.4
 777,US.CBSA,"Rutland, VT Micropolitan Statistical Area",40860,13.5
@@ -783,10 +783,10 @@
 781,US.CBSA,"St. Cloud, MN Metropolitan Statistical Area",41060,13.8
 782,US.CBSA,"St. George, UT Metropolitan Statistical Area",41100,8.8
 783,US.CBSA,"St. Joseph, MO-KS Metropolitan Statistical Area",41140,10.7
-784,US.CBSA,"St. Louis, MO-IL Metropolitan Statistical Area",41180,12
+784,US.CBSA,"St. Louis, MO-IL Metropolitan Statistical Area",41180,12.0
 785,US.CBSA,"St. Marys, GA Micropolitan Statistical Area",41220,15.5
 786,US.CBSA,"St. Marys, PA Micropolitan Statistical Area",41260,18.6
-787,US.CBSA,"Salem, OH Micropolitan Statistical Area",41400,16
+787,US.CBSA,"Salem, OH Micropolitan Statistical Area",41400,16.0
 788,US.CBSA,"Salem, OR Metropolitan Statistical Area",41420,9.5
 789,US.CBSA,"Salina, KS Micropolitan Statistical Area",41460,11.9
 790,US.CBSA,"Salinas, CA Metropolitan Statistical Area",41500,13.4
@@ -808,14 +808,14 @@
 806,US.CBSA,"Sault Ste. Marie, MI Micropolitan Statistical Area",42300,24.3
 807,US.CBSA,"Savannah, GA Metropolitan Statistical Area",42340,15.8
 808,US.CBSA,"Sayre, PA Micropolitan Statistical Area",42380,18.5
-809,US.CBSA,"Scottsbluff, NE Micropolitan Statistical Area",42420,10
+809,US.CBSA,"Scottsbluff, NE Micropolitan Statistical Area",42420,10.0
 810,US.CBSA,"Scottsboro, AL Micropolitan Statistical Area",42460,11.3
 811,US.CBSA,"Scottsburg, IN Micropolitan Statistical Area",42500,11.6
 812,US.CBSA,"Scranton--Wilkes-Barre, PA Metropolitan Statistical Area",42540,21.1
 813,US.CBSA,"Searcy, AR Micropolitan Statistical Area",42620,11.2
-814,US.CBSA,"Seattle-Tacoma-Bellevue, WA Metropolitan Statistical Area",42660,15
+814,US.CBSA,"Seattle-Tacoma-Bellevue, WA Metropolitan Statistical Area",42660,15.0
 815,US.CBSA,"Sebastian-Vero Beach, FL Metropolitan Statistical Area",42680,9.2
-816,US.CBSA,"Sebring-Avon Park, FL Metropolitan Statistical Area",42700,11
+816,US.CBSA,"Sebring-Avon Park, FL Metropolitan Statistical Area",42700,11.0
 817,US.CBSA,"Sedalia, MO Micropolitan Statistical Area",42740,11.3
 818,US.CBSA,"Selinsgrove, PA Micropolitan Statistical Area",42780,19.3
 819,US.CBSA,"Selma, AL Micropolitan Statistical Area",42820,17.2
@@ -823,7 +823,7 @@
 821,US.CBSA,"Seneca Falls, NY Micropolitan Statistical Area",42900,9.9
 822,US.CBSA,"Sevierville, TN Micropolitan Statistical Area",42940,15.3
 823,US.CBSA,"Seymour, IN Micropolitan Statistical Area",42980,12.6
-824,US.CBSA,"Shawano, WI Micropolitan Statistical Area",43020,12
+824,US.CBSA,"Shawano, WI Micropolitan Statistical Area",43020,12.0
 825,US.CBSA,"Shawnee, OK Micropolitan Statistical Area",43060,11.7
 826,US.CBSA,"Sheboygan, WI Metropolitan Statistical Area",43100,11.1
 827,US.CBSA,"Shelby, NC Micropolitan Statistical Area",43140,14.1
@@ -831,7 +831,7 @@
 829,US.CBSA,"Shelton, WA Micropolitan Statistical Area",43220,16.3
 830,US.CBSA,"Sheridan, WY Micropolitan Statistical Area",43260,6.4
 831,US.CBSA,"Sherman-Denison, TX Metropolitan Statistical Area",43300,10.1
-832,US.CBSA,"Show Low, AZ Micropolitan Statistical Area",43320,18
+832,US.CBSA,"Show Low, AZ Micropolitan Statistical Area",43320,18.0
 833,US.CBSA,"Shreveport-Bossier City, LA Metropolitan Statistical Area",43340,18.3
 834,US.CBSA,"Sidney, OH Micropolitan Statistical Area",43380,13.6
 835,US.CBSA,"Sierra Vista-Douglas, AZ Metropolitan Statistical Area",43420,12.6
@@ -842,7 +842,7 @@
 840,US.CBSA,"Snyder, TX Micropolitan Statistical Area",43660,8.5
 841,US.CBSA,"Somerset, KY Micropolitan Statistical Area",43700,17.8
 842,US.CBSA,"Somerset, PA Micropolitan Statistical Area",43740,21.3
-843,US.CBSA,"Sonora, CA Micropolitan Statistical Area",43760,15
+843,US.CBSA,"Sonora, CA Micropolitan Statistical Area",43760,15.0
 844,US.CBSA,"South Bend-Mishawaka, IN-MI Metropolitan Statistical Area",43780,14.9
 845,US.CBSA,"Spartanburg, SC Metropolitan Statistical Area",43900,9.8
 846,US.CBSA,"Spearfish, SD Micropolitan Statistical Area",43940,6.9
@@ -853,13 +853,13 @@
 851,US.CBSA,"Springfield, MA Metropolitan Statistical Area",44140,15.8
 852,US.CBSA,"Springfield, MO Metropolitan Statistical Area",44180,11.7
 853,US.CBSA,"Springfield, OH Metropolitan Statistical Area",44220,16.2
-854,US.CBSA,"Starkville, MS Micropolitan Statistical Area",44260,13
+854,US.CBSA,"Starkville, MS Micropolitan Statistical Area",44260,13.0
 855,US.CBSA,"State College, PA Metropolitan Statistical Area",44300,20.5
 856,US.CBSA,"Statesboro, GA Micropolitan Statistical Area",44340,16.1
 857,US.CBSA,"Staunton, VA Metropolitan Statistical Area",44420,8.8
 858,US.CBSA,"Steamboat Springs, CO Micropolitan Statistical Area",44460,7.5
 859,US.CBSA,"Stephenville, TX Micropolitan Statistical Area",44500,9.5
-860,US.CBSA,"Sterling, CO Micropolitan Statistical Area",44540,9
+860,US.CBSA,"Sterling, CO Micropolitan Statistical Area",44540,9.0
 861,US.CBSA,"Sterling, IL Micropolitan Statistical Area",44580,11.8
 862,US.CBSA,"Stevens Point, WI Micropolitan Statistical Area",44620,12.7
 863,US.CBSA,"Stillwater, OK Micropolitan Statistical Area",44660,9.8
@@ -872,7 +872,7 @@
 870,US.CBSA,"Sunbury, PA Micropolitan Statistical Area",44980,19.9
 871,US.CBSA,"Susanville, CA Micropolitan Statistical Area",45000,11.8
 872,US.CBSA,"Sweetwater, TX Micropolitan Statistical Area",45020,8.9
-873,US.CBSA,"Syracuse, NY Metropolitan Statistical Area",45060,12
+873,US.CBSA,"Syracuse, NY Metropolitan Statistical Area",45060,12.0
 874,US.CBSA,"Tahlequah, OK Micropolitan Statistical Area",45140,11.7
 875,US.CBSA,"Talladega-Sylacauga, AL Micropolitan Statistical Area",45180,13.9
 876,US.CBSA,"Tallahassee, FL Metropolitan Statistical Area",45220,9.1
@@ -890,11 +890,11 @@
 888,US.CBSA,"Toccoa, GA Micropolitan Statistical Area",45740,16.2
 889,US.CBSA,"Toledo, OH Metropolitan Statistical Area",45780,16.7
 890,US.CBSA,"Topeka, KS Metropolitan Statistical Area",45820,12.1
-891,US.CBSA,"Torrington, CT Micropolitan Statistical Area",45860,9
-892,US.CBSA,"Traverse City, MI Micropolitan Statistical Area",45900,21
+891,US.CBSA,"Torrington, CT Micropolitan Statistical Area",45860,9.0
+892,US.CBSA,"Traverse City, MI Micropolitan Statistical Area",45900,21.0
 893,US.CBSA,"Trenton-Princeton, NJ Metropolitan Statistical Area",45940,15.3
 894,US.CBSA,"Troy, AL Micropolitan Statistical Area",45980,13.4
-895,US.CBSA,"Truckee-Grass Valley, CA Micropolitan Statistical Area",46020,14
+895,US.CBSA,"Truckee-Grass Valley, CA Micropolitan Statistical Area",46020,14.0
 896,US.CBSA,"Tucson, AZ Metropolitan Statistical Area",46060,13.5
 897,US.CBSA,"Tullahoma-Manchester, TN Micropolitan Statistical Area",46100,11.8
 898,US.CBSA,"Tulsa, OK Metropolitan Statistical Area",46140,10.2
@@ -905,7 +905,7 @@
 903,US.CBSA,"Ukiah, CA Micropolitan Statistical Area",46380,15.2
 904,US.CBSA,"Union, SC Micropolitan Statistical Area",46420,9.9
 905,US.CBSA,"Union City, TN Micropolitan Statistical Area",46460,12.5
-906,US.CBSA,"Urbana, OH Micropolitan Statistical Area",46500,16
+906,US.CBSA,"Urbana, OH Micropolitan Statistical Area",46500,16.0
 907,US.CBSA,"Urban Honolulu, HI Metropolitan Statistical Area",46520,18.5
 908,US.CBSA,"Utica-Rome, NY Metropolitan Statistical Area",46540,11.6
 909,US.CBSA,"Uvalde, TX Micropolitan Statistical Area",46620,8.8
@@ -924,19 +924,19 @@
 922,US.CBSA,"Virginia Beach-Norfolk-Newport News, VA-NC Metropolitan Statistical Area",47260,11.1
 923,US.CBSA,"Visalia, CA Metropolitan Statistical Area",47300,15.2
 924,US.CBSA,"Wabash, IN Micropolitan Statistical Area",47340,12.6
-925,US.CBSA,"Waco, TX Metropolitan Statistical Area",47380,9
+925,US.CBSA,"Waco, TX Metropolitan Statistical Area",47380,9.0
 926,US.CBSA,"Wahpeton, ND-MN Micropolitan Statistical Area",47420,9.9
 927,US.CBSA,"Walla Walla, WA Metropolitan Statistical Area",47460,15.4
 928,US.CBSA,"Wapakoneta, OH Micropolitan Statistical Area",47540,12.7
 929,US.CBSA,"Warner Robins, GA Metropolitan Statistical Area",47580,13.4
-930,US.CBSA,"Warren, PA Micropolitan Statistical Area",47620,19
+930,US.CBSA,"Warren, PA Micropolitan Statistical Area",47620,19.0
 931,US.CBSA,"Warrensburg, MO Micropolitan Statistical Area",47660,13.2
 932,US.CBSA,"Warsaw, IN Micropolitan Statistical Area",47700,11.3
 933,US.CBSA,"Washington, IN Micropolitan Statistical Area",47780,12.7
 934,US.CBSA,"Washington, NC Micropolitan Statistical Area",47820,12.6
 935,US.CBSA,"Washington-Arlington-Alexandria, DC-VA-MD-WV Metropolitan Statistical Area",47900,10.5
 936,US.CBSA,"Washington Court House, OH Micropolitan Statistical Area",47920,15.3
-937,US.CBSA,"Waterloo-Cedar Falls, IA Metropolitan Statistical Area",47940,13
+937,US.CBSA,"Waterloo-Cedar Falls, IA Metropolitan Statistical Area",47940,13.0
 938,US.CBSA,"Watertown, SD Micropolitan Statistical Area",47980,4.9
 939,US.CBSA,"Watertown-Fort Atkinson, WI Micropolitan Statistical Area",48020,11.1
 940,US.CBSA,"Watertown-Fort Drum, NY Metropolitan Statistical Area",48060,12.7
@@ -953,15 +953,15 @@
 951,US.CBSA,"Wichita, KS Metropolitan Statistical Area",48620,12.6
 952,US.CBSA,"Wichita Falls, TX Metropolitan Statistical Area",48660,9.3
 953,US.CBSA,"Williamsport, PA Metropolitan Statistical Area",48700,20.2
-954,US.CBSA,"Williston, ND Micropolitan Statistical Area",48780,9
+954,US.CBSA,"Williston, ND Micropolitan Statistical Area",48780,9.0
 955,US.CBSA,"Willmar, MN Micropolitan Statistical Area",48820,12.2
 956,US.CBSA,"Wilmington, NC Metropolitan Statistical Area",48900,12.2
 957,US.CBSA,"Wilmington, OH Micropolitan Statistical Area",48940,15.3
 958,US.CBSA,"Wilson, NC Micropolitan Statistical Area",48980,13.3
-959,US.CBSA,"Winchester, VA-WV Metropolitan Statistical Area",49020,9
+959,US.CBSA,"Winchester, VA-WV Metropolitan Statistical Area",49020,9.0
 960,US.CBSA,"Winfield, KS Micropolitan Statistical Area",49060,11.9
 961,US.CBSA,"Winnemucca, NV Micropolitan Statistical Area",49080,17.8
-962,US.CBSA,"Winona, MN Micropolitan Statistical Area",49100,15
+962,US.CBSA,"Winona, MN Micropolitan Statistical Area",49100,15.0
 963,US.CBSA,"Winston-Salem, NC Metropolitan Statistical Area",49180,11.4
 964,US.CBSA,"Wisconsin Rapids-Marshfield, WI Micropolitan Statistical Area",49220,11.9
 965,US.CBSA,"Woodward, OK Micropolitan Statistical Area",49260,10.7
@@ -969,11 +969,11 @@
 967,US.CBSA,"Worcester, MA-CT Metropolitan Statistical Area",49340,14.4
 968,US.CBSA,"Worthington, MN Micropolitan Statistical Area",49380,13.8
 969,US.CBSA,"Yakima, WA Metropolitan Statistical Area",49420,16.2
-970,US.CBSA,"Yankton, SD Micropolitan Statistical Area",49460,6
+970,US.CBSA,"Yankton, SD Micropolitan Statistical Area",49460,6.0
 971,US.CBSA,"York-Hanover, PA Metropolitan Statistical Area",49620,19.5
 972,US.CBSA,"Youngstown-Warren-Boardman, OH-PA Metropolitan Statistical Area",49660,17.1
 973,US.CBSA,"Yuba City, CA Metropolitan Statistical Area",49700,15.8
 974,US.CBSA,"Yuma, AZ Metropolitan Statistical Area",49740,18.7
 975,US.CBSA,"Zanesville, OH Micropolitan Statistical Area",49780,16.4
 976,US.CBSA,"Zapata, TX Micropolitan Statistical Area",49820,12.8
-977,US.WholeUSA,United States,99999,13
+977,US.WholeUSA,United States,99999,13.0
