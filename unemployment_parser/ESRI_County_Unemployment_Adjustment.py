@@ -8,6 +8,7 @@ import json
 import requests
 from db_layer import sql_caller
 import sys
+import numpy as np
 
 ##
 ## Only uncomment section below if ESRI updates their data
@@ -57,7 +58,7 @@ ESRI_county_unemployment_df['Geo_ID'] = ESRI_county_unemployment_df['Geo_ID'].ap
 sql = sql_caller.SqlCaller(create_tables=False)
 bls_unemployment_data = sql.db_get_BLS_county_unemployment()
 bls_unemployment_data['UnemploymentRate'] = bls_unemployment_data['UnemploymentRate'].astype(float)
-match = pd.merge(bls_unemployment_data, ESRI_county_unemployment_df, how='inner', left_on=['Geo_ID'], right_on=['Geo_ID']).rename(columns={'UnemploymentRate_x': 'UnemploymentRate_ESRI', 'UnemploymentRate_y': 'UnemploymentRate_BLS'})
+match = pd.merge(bls_unemployment_data, ESRI_county_unemployment_df, how='inner', left_on=['Geo_ID'], right_on=['Geo_ID']).rename(columns={'UnemploymentRate_x': 'UnemploymentRate_BLS', 'UnemploymentRate_y': 'UnemploymentRate_ESRI'})
 
 # Make sure there are no new missing ESRI IDs that we have not accounted for
 arcgisids_not_in_BLS = ESRI_county_unemployment_df[(~ESRI_county_unemployment_df.Geo_ID.isin(match.Geo_ID))]
@@ -69,4 +70,10 @@ for i, row in arcgisids_not_in_BLS.iterrows():
 
 # Set multiplier
 match['Unemployment_Adjustment'] = match['UnemploymentRate_BLS'] / match['UnemploymentRate_ESRI']
+
+for i, row in match.iterrows():
+    if row['Unemployment_Adjustment'] == np.inf:
+        match.at[i, 'Unemployment_Adjustment'] = match.at[i, 'UnemploymentRate_BLS']
+        print("!!! Found a inf number !!!")
+
 match.to_csv('ESRI_Counties_Unemployment_Adjustments.csv')

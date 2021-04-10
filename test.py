@@ -8,6 +8,12 @@ import requests
 import json
 import sys
 import time
+from db_layer import sql_caller
+
+sql_caller.SqlCaller(create_tables=False)
+
+
+
 
 
 df = pd.DataFrame(columns=['MSAID','CBSAID'])

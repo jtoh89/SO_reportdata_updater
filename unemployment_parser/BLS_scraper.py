@@ -14,7 +14,6 @@ urls = {
     'states':'https://download.bls.gov/pub/time.series/la/la.data.2.AllStatesU'
 }
 
-
 # DEFINE CURRENT MONTH AND YEAR TO PULL. SET US UNEMPLOYMENT RATE
 # CHECK DATA RELEASES HERE: https://www.bls.gov/schedule/news_release/empsit.htm
 final_df = pd.DataFrame()

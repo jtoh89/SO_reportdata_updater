@@ -8,6 +8,7 @@ import json
 import requests
 from db_layer import sql_caller
 import sys
+import numpy as np
 
 
 dict = {
@@ -61,6 +62,12 @@ for i, row in arcgisids_not_in_BLS.iterrows():
 
 # Set Unemployment_Adjustment.
 match['Unemployment_Adjustment'] = match['UnemploymentRate_BLS'] / match['UnemploymentRate_ESRI']
+
+for i, row in match.iterrows():
+    if row['Unemployment_Adjustment'] == np.inf:
+        match.at[i, 'Unemployment_Adjustment'] = match.at[i, 'UnemploymentRate_BLS']
+        print("!!! Found a inf number !!!")
+
 match.to_csv('ESRI_Msa_Unemployment_Adjustments.csv')
 
 

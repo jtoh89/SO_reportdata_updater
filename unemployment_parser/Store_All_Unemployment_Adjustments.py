@@ -1,11 +1,7 @@
-from arcgis.gis import GIS
-from arcgis.geocoding import geocode
-from arcgis.geoenrichment import standard_geography_query
-from arcgis.geoenrichment import BufferStudyArea
-from arcgis.geoenrichment import enrich
 import pandas as pd
 import json
 import requests
+import numpy as np
 from db_layer import sql_caller
 import sys
 

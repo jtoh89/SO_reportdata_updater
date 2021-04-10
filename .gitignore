@@ -8,3 +8,5 @@ db_layer/__pycache__/
 geomapper/.DS_Store
 
 un_pw.json
+unemployment_parser/.DS_Store
+zipcode_parser/.DS_Store
